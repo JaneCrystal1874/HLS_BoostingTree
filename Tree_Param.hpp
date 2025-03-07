@@ -4,10 +4,10 @@
 #define  MAX_NODE 196
 struct TreeNode{
 	bool is_leaf;
-	ap_uint<4> feature_index;	//×Ü¹²13¸öÌØÕ÷ 4Î»¼´¿É
-    float value;
-    ap_uint<8> left_child;
-    ap_uint<8> right_child;
+	ap_uint<4> feature_index;	//è¾“å…¥ç‰¹å¾13ä¸ª
+   	float value;
+    	ap_uint<8> left_child;
+    	ap_uint<8> right_child;
 };
 
 const TreeNode LBoostTree[64][MAX_NODE] = {
