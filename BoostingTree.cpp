@@ -4,8 +4,6 @@
 
 #define FEATURE_SIZE 13 // 特征数量
 #define N_TREES 64 // 树数量
-
-
 //并行多棵树的预测
 float predict_ensemble(const float features[FEATURE_SIZE]) {
 	#pragma HLS ARRAY_PARTITION variable=LBoostTree block factor=4 dim=1
