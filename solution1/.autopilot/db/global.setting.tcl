@@ -43,12 +43,12 @@ set TargetInfo xc7z020:-clg400:-2
 set SourceFiles {sc {} c ../BoostingTree.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile E:/SEU/Graduation_Prj/BoostingTree/solution1/solution1.directive
-set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
+set TBFiles {verilog ../test_predict_ensemble.cpp bc ../test_predict_ensemble.cpp vhdl ../test_predict_ensemble.cpp sc ../test_predict_ensemble.cpp cas ../test_predict_ensemble.cpp c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
-set TBTops {bc "" c "" sc "" cas "" vhdl "" verilog ""}
-set TBInstNames {bc "" c "" sc "" cas "" vhdl "" verilog ""}
+set TBTops {verilog {} bc {} vhdl {} sc {} cas {} c {}}
+set TBInstNames {verilog {} bc {} vhdl {} sc {} cas {} c {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
 set TBTVFileNotFound {}

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'predict_ensemble'" level="0">
-<item name = "Date">Thu Mar  6 19:08:49 2025
+<item name = "Date">Fri Mar  7 11:07:14 2025
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">BoostingTree</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">?, ?, ?, ?, none</column>
+<column name="">705, 5569, 705, 5569, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,70 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 2">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 3">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 4">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 5">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 6">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 7">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 8">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 9">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 10">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 11">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 12">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 13">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 14">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 15">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 16">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 17">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 18">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 19">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 20">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 21">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 22">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 23">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 24">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 25">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 26">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 27">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 28">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 29">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 30">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 31">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 32">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 33">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 34">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 35">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 36">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 37">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 38">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 39">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 40">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 41">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 42">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 43">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 44">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 45">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 46">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 47">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 48">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 49">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 50">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 51">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 52">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 53">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 54">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 55">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 56">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 57">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 58">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 59">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 60">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 61">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 62">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 63">?, ?, 4, -, -, ?, no</column>
-<column name="- Loop 64">?, ?, 4, -, -, ?, no</column>
+<column name="- Loop 1">704, 5568, 11 ~ 87, -, -, 64, no</column>
+<column name=" + Loop 1.1">5, 81, 4, -, -, 1 ~ 20, no</column>
 </table>
 </item>
 </section>

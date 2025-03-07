@@ -8,24 +8,20 @@
 
 //并行多棵树的预测
 float predict_ensemble(const float features[FEATURE_SIZE]) {
+	#pragma HLS ARRAY_PARTITION variable=LBoostTree block factor=4 dim=1
 	#pragma HLS INTERFACE s_axilite port=return bundle=CTRL_BUS
-    #pragma HLS ARRAY_PARTITION variable=trees complete dim=1 // 并行化树访问
 
-
-    float sum = 0;
+   float sum = 0;
    // int flag = 0;
-    for (int i = 0; i < N_TREES; i++) { // N_TREES=树的数量
-        #pragma HLS UNROLL // 完全展开并行预测
+    for (int i = 0; i < N_TREES; i++) {
+#pragma HLS PIPELINE II=1
+ // N_TREES=树的数量
+       // #pragma HLS UNROLL // 完全展开并行预测
         int current_addr = 0;
         TreeNode node;
         while (true) {
+#pragma HLS LOOP_TRIPCOUNT min=1 max=20 avg=10 // 添加人工循环分析指导
             node = LBoostTree[i][current_addr];
-//            if (current_addr >= MAX_NODE)
-//            {
-//                    printf("错误：树%d中的节点地址越界！\n", i);
-//                    flag = 1;
-//                    break;
-//            }
             if (node.is_leaf) {
                 sum += node.value;
                 break;
@@ -36,9 +32,5 @@ float predict_ensemble(const float features[FEATURE_SIZE]) {
                           node.left_child : node.right_child;
         }
     }
-//    if(flag == 0)
-//    {
-//    	printf("无越界情况\n");
-//    }
     return sum; // 回归任务输出
 }

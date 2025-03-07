@@ -6,9 +6,9 @@
 module predict_ensemble_ibs_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 32;
-parameter AWIDTH = 8;
-parameter MEM_SIZE = 195;
+parameter DWIDTH = 4;
+parameter AWIDTH = 12;
+parameter MEM_SIZE = 3136;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -43,9 +43,9 @@ module predict_ensemble_ibs(
     ce0,
     q0);
 
-parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd195;
-parameter AddressWidth = 32'd8;
+parameter DataWidth = 32'd4;
+parameter AddressRange = 32'd3136;
+parameter AddressWidth = 32'd12;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

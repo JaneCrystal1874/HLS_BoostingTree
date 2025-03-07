@@ -3,11 +3,11 @@
 
 #define  MAX_NODE 196
 struct TreeNode{
-   bool is_leaf;
-    int feature_index;
+	bool is_leaf;
+	ap_uint<4> feature_index;	//总共13个特征 4位即可
     float value;
-    int left_child;
-    int right_child;
+    ap_uint<8> left_child;
+    ap_uint<8> right_child;
 };
 
 const TreeNode LBoostTree[64][MAX_NODE] = {

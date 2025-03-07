@@ -950,3 +950,363 @@ INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BoostingTree/BoostingTree.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:58 . Memory (MB): peak = 184.910 ; gain = 94.102
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:58 . Memory (MB): peak = 184.910 ; gain = 94.102
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:01:11 . Memory (MB): peak = 448.812 ; gain = 358.004
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:12 ; elapsed = 00:01:11 . Memory (MB): peak = 448.812 ; gain = 358.004
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (BoostingTree/BoostingTree.cpp:17) in function 'predict_ensemble' completely with a factor of 64.
+WARNING: [XFORM 203-105] Ignored array partition directive (BoostingTree/BoostingTree.cpp:12:1) : cannot locate the real object(s).
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:15 ; elapsed = 00:01:15 . Memory (MB): peak = 448.812 ; gain = 358.004
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:22 ; elapsed = 00:01:22 . Memory (MB): peak = 448.812 ; gain = 358.004
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'predict_ensemble' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'predict_ensemble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 83.331 seconds; current allocated memory: 278.143 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 64 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 3.585 seconds; current allocated memory: 287.858 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'predict_ensemble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'predict_ensemble/features' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'predict_ensemble' to 's_axilite & ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf' to 'predict_ensemble_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i' to 'predict_ensemble_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value' to 'predict_ensemble_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil' to 'predict_ensemble_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi' to 'predict_ensemble_fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port CTRL_BUS.
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fadd_32ns_32ns_32_4_full_dsp_1' to 'predict_ensemble_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fcmp_32ns_32ns_1_2_1' to 'predict_ensemble_hbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'predict_ensemble'.
+INFO: [HLS 200-111]  Elapsed time: 3.915 seconds; current allocated memory: 302.419 MB.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_bkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_cud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_dEe_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_eOg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_fYi_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:37 ; elapsed = 00:01:40 . Memory (MB): peak = 448.812 ; gain = 358.004
+INFO: [VHDL 208-304] Generating VHDL RTL for predict_ensemble.
+INFO: [VLOG 209-307] Generating Verilog RTL for predict_ensemble.
+INFO: [HLS 200-112] Total elapsed time: 100.303 seconds; peak allocated memory: 302.419 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-2'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BoostingTree/BoostingTree.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:01:04 . Memory (MB): peak = 184.441 ; gain = 92.789
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:01:04 . Memory (MB): peak = 184.441 ; gain = 92.789
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:12 ; elapsed = 00:01:18 . Memory (MB): peak = 449.023 ; gain = 357.371
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:13 ; elapsed = 00:01:18 . Memory (MB): peak = 449.023 ; gain = 357.371
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (BoostingTree/BoostingTree.cpp:16) in function 'predict_ensemble' completely with a factor of 64.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.is_leaf'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.feature_index.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.value'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.left_child.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.right_child.V'  in dimension 1 with a block factor 4.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:15 ; elapsed = 00:01:21 . Memory (MB): peak = 449.023 ; gain = 357.371
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:01:24 . Memory (MB): peak = 449.023 ; gain = 357.371
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'predict_ensemble' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'predict_ensemble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 86.37 seconds; current allocated memory: 278.693 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 64 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 4.119 seconds; current allocated memory: 288.438 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'predict_ensemble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'predict_ensemble/features' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'predict_ensemble' to 's_axilite & ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_0' to 'predict_ensemble_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_3' to 'predict_ensemble_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_0' to 'predict_ensemble_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_3' to 'predict_ensemble_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_3' to 'predict_ensemble_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_1' to 'predict_ensemble_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_2' to 'predict_ensemble_hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_1' to 'predict_ensemble_ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_2' to 'predict_ensemble_jbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_2' to 'predict_ensemble_kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_2' to 'predict_ensemble_lbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_1' to 'predict_ensemble_mb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_2' to 'predict_ensemble_ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_1' to 'predict_ensemble_ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_1' to 'predict_ensemble_pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_3' to 'predict_ensemble_qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i' to 'predict_ensemble_rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_3' to 'predict_ensemble_sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil' to 'predict_ensemble_tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi' to 'predict_ensemble_udo' due to the length limit 20
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port CTRL_BUS.
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fadd_32ns_32ns_32_4_full_dsp_1' to 'predict_ensemble_vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fcmp_32ns_32ns_1_2_1' to 'predict_ensemble_wdI' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_vdy': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_wdI': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'predict_ensemble'.
+INFO: [HLS 200-111]  Elapsed time: 4.221 seconds; current allocated memory: 303.229 MB.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_bkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_cud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_dEe_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_eOg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_fYi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_g8j_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_hbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_ibs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_jbC_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_kbM_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_lbW_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_mb6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_ncg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_ocq_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_pcA_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_qcK_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_rcU_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_sc4_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_tde_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_udo_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:36 ; elapsed = 00:01:46 . Memory (MB): peak = 449.023 ; gain = 357.371
+INFO: [VHDL 208-304] Generating VHDL RTL for predict_ensemble.
+INFO: [VLOG 209-307] Generating Verilog RTL for predict_ensemble.
+INFO: [HLS 200-112] Total elapsed time: 105.888 seconds; peak allocated memory: 303.229 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BoostingTree/BoostingTree.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:55 . Memory (MB): peak = 184.988 ; gain = 93.219
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:55 . Memory (MB): peak = 184.988 ; gain = 93.219
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:01:07 . Memory (MB): peak = 448.832 ; gain = 357.062
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:12 ; elapsed = 00:01:08 . Memory (MB): peak = 448.832 ; gain = 357.062
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (BoostingTree/BoostingTree.cpp:16) in function 'predict_ensemble' completely with a factor of 64.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.is_leaf'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.feature_index.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.value'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.left_child.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.right_child.V'  in dimension 1 with a block factor 4.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:14 ; elapsed = 00:01:11 . Memory (MB): peak = 448.832 ; gain = 357.062
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:01:14 . Memory (MB): peak = 448.832 ; gain = 357.062
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'predict_ensemble' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'predict_ensemble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 75.944 seconds; current allocated memory: 279.798 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 64 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 3.303 seconds; current allocated memory: 289.817 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'predict_ensemble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'predict_ensemble/features' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'predict_ensemble' to 's_axilite & ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_0' to 'predict_ensemble_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_3' to 'predict_ensemble_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_0' to 'predict_ensemble_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_3' to 'predict_ensemble_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_3' to 'predict_ensemble_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_1' to 'predict_ensemble_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_2' to 'predict_ensemble_hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_1' to 'predict_ensemble_ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_2' to 'predict_ensemble_jbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_2' to 'predict_ensemble_kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_2' to 'predict_ensemble_lbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_1' to 'predict_ensemble_mb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_2' to 'predict_ensemble_ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_1' to 'predict_ensemble_ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_1' to 'predict_ensemble_pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_3' to 'predict_ensemble_qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i' to 'predict_ensemble_rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_3' to 'predict_ensemble_sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil' to 'predict_ensemble_tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi' to 'predict_ensemble_udo' due to the length limit 20
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port CTRL_BUS.
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fadd_32ns_32ns_32_4_full_dsp_1' to 'predict_ensemble_vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fcmp_32ns_32ns_1_2_1' to 'predict_ensemble_wdI' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_vdy': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_wdI': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'predict_ensemble'.
+INFO: [HLS 200-111]  Elapsed time: 3.642 seconds; current allocated memory: 304.619 MB.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_bkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_cud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_dEe_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_eOg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_fYi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_g8j_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_hbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_ibs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_jbC_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_kbM_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_lbW_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_mb6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_ncg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_ocq_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_pcA_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_qcK_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_rcU_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_sc4_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_tde_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_udo_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:34 ; elapsed = 00:01:33 . Memory (MB): peak = 448.832 ; gain = 357.062
+INFO: [VHDL 208-304] Generating VHDL RTL for predict_ensemble.
+INFO: [VLOG 209-307] Generating Verilog RTL for predict_ensemble.
+INFO: [HLS 200-112] Total elapsed time: 92.746 seconds; peak allocated memory: 304.619 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'BoostingTree/BoostingTree.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:54 . Memory (MB): peak = 184.426 ; gain = 94.012
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:54 . Memory (MB): peak = 184.426 ; gain = 94.012
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:01:06 . Memory (MB): peak = 449.078 ; gain = 358.664
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:01:06 . Memory (MB): peak = 449.078 ; gain = 358.664
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (BoostingTree/BoostingTree.cpp:16) in function 'predict_ensemble' for pipelining.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1' (BoostingTree/BoostingTree.cpp:25) in function 'predict_ensemble' completely: variable loop bound.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.is_leaf'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.feature_index.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.value'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.left_child.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree.right_child.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4[16 x [196 x i1]]P.i32.i64.i64' into 'predict_ensemble' (BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:24).
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4[16 x [196 x i4]]P.i32.i64.i64' into 'predict_ensemble' (BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:24).
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4[16 x [196 x float]]P.i32.i64.i64' into 'predict_ensemble' (BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:24).
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:01:07 . Memory (MB): peak = 449.078 ; gain = 358.664
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1' (BoostingTree/BoostingTree.cpp:16:19) in function 'predict_ensemble' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:01:07 . Memory (MB): peak = 449.078 ; gain = 358.664
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'predict_ensemble' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'predict_ensemble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 67.017 seconds; current allocated memory: 252.366 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.198 seconds; current allocated memory: 252.978 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'predict_ensemble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'predict_ensemble/features' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'predict_ensemble' to 's_axilite & ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_3' to 'predict_ensemble_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_0' to 'predict_ensemble_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_1' to 'predict_ensemble_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_2' to 'predict_ensemble_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i' to 'predict_ensemble_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_3' to 'predict_ensemble_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_2' to 'predict_ensemble_hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_1' to 'predict_ensemble_ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_3' to 'predict_ensemble_jbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_0' to 'predict_ensemble_kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_1' to 'predict_ensemble_lbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_2' to 'predict_ensemble_mb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_3' to 'predict_ensemble_ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_2' to 'predict_ensemble_ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_1' to 'predict_ensemble_pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil' to 'predict_ensemble_qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_3' to 'predict_ensemble_rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_2' to 'predict_ensemble_sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_1' to 'predict_ensemble_tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi' to 'predict_ensemble_udo' due to the length limit 20
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port CTRL_BUS.
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fadd_32ns_32ns_32_4_full_dsp_1' to 'predict_ensemble_vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fcmp_32ns_32ns_1_2_1' to 'predict_ensemble_wdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_mux_432_8_1_1' to 'predict_ensemble_xdS' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_vdy': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_wdI': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_xdS': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'predict_ensemble'.
+INFO: [HLS 200-111]  Elapsed time: 0.353 seconds; current allocated memory: 254.091 MB.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_bkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_cud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_dEe_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_eOg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_fYi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_g8j_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_hbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_ibs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_jbC_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_kbM_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_lbW_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_mb6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_ncg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_ocq_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_pcA_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_qcK_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_rcU_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_sc4_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_tde_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_udo_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:16 ; elapsed = 00:01:12 . Memory (MB): peak = 449.078 ; gain = 358.664
+INFO: [VHDL 208-304] Generating VHDL RTL for predict_ensemble.
+INFO: [VLOG 209-307] Generating Verilog RTL for predict_ensemble.
+INFO: [HLS 200-112] Total elapsed time: 71.818 seconds; peak allocated memory: 254.091 MB.

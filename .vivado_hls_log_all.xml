@@ -12,8 +12,9 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [RTGEN 206-101] RTL name 'predict_ensemble_deE' is changed to 'predict_ensemble_deE_x' due to conflict." projectName="BoostingTree" solutionName="solution1" date="2025-03-06T19:09:03.343+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-105] Ignored array partition directive (BoostingTree/BoostingTree.cpp:12:1) : cannot locate the real object(s)." projectName="BoostingTree" solutionName="solution1" date="2025-03-06T19:08:45.994+0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-65] Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened." projectName="BoostingTree" solutionName="solution1" date="2025-03-07T11:07:14.610+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1' (BoostingTree/BoostingTree.cpp:16:19) in function 'predict_ensemble' : &#xD;&#xA;&#xD;&#xA;the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header." projectName="BoostingTree" solutionName="solution1" date="2025-03-07T11:07:14.528+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1' (BoostingTree/BoostingTree.cpp:25) in function 'predict_ensemble' completely: variable loop bound." projectName="BoostingTree" solutionName="solution1" date="2025-03-07T11:07:13.911+0800" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

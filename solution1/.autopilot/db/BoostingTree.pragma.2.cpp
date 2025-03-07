@@ -25457,14 +25457,14 @@ namespace hls {
 
 
 struct TreeNode{
-   bool is_leaf;
-    int feature_index;
+ bool is_leaf;
+ ap_uint<4> feature_index;
     float value;
-    int left_child;
-    int right_child;
+    ap_uint<8> left_child;
+    ap_uint<8> right_child;
 };
 
-const TreeNode LBoostTree[64][195] = {
+const TreeNode LBoostTree[64][196] = {
    {
       {0, 8, 0.822581f, 1, 2},
       {0, 7, 0.800560f, 3, 4},
@@ -37316,27 +37316,29 @@ const TreeNode LBoostTree[64][195] = {
 
 
 float predict_ensemble(const float features[13]) {_ssdm_SpecArrayDimSize(features, 13);
+_ssdm_SpecArrayPartition( &LBoostTree, 1, "BLOCK", 4, "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "CTRL_BUS", "", "", 0, 0, 0, 0, "", "");
-_ssdm_SpecArrayPartition( true, 1, "COMPLETE", 0, "");
 
-
- float sum = 0.0;
+ float sum = 0;
 
     for (int i = 0; i < 64; i++) {
-_ssdm_Unroll(0,0,0, "");
+_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
+
+
  int current_addr = 0;
         TreeNode node;
         while (true) {
-            node = LBoostTree[i][current_addr];
+_ssdm_op_SpecLoopTripCount(1, 20, 10, "");
+ node = LBoostTree[i][current_addr];
             if (node.is_leaf) {
                 sum += node.value;
                 break;
             }
-            float fval = features[node.feature_index];
+
+            float fval = features[node.feature_index-1];
             current_addr = (fval <= node.value) ?
                           node.left_child : node.right_child;
         }
     }
-
-    return sum / 64;
+    return sum;
 }
