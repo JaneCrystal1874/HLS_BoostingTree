@@ -25451,6 +25451,204 @@ namespace hls {
 
 };
 # 3 "BoostingTree/BoostingTree.cpp" 2
+# 1 "F:/Xilinx/Vivado/2019.1/common/technology/autopilot\\hls_stream.h" 1
+# 66 "F:/Xilinx/Vivado/2019.1/common/technology/autopilot\\hls_stream.h"
+# 1 "F:/Xilinx/Vivado/2019.1/common/technology/autopilot/etc/autopilot_enum.h" 1
+# 58 "F:/Xilinx/Vivado/2019.1/common/technology/autopilot/etc/autopilot_enum.h"
+enum SsdmDataTypes {
+    _ssdm_sc_int = 0,
+    _ssdm_c_int = _ssdm_sc_int,
+    _ssdm_sc_uint = 1,
+    _ssdm_c_uint = _ssdm_sc_uint,
+    _ssdm_sc_bigint = 2,
+    _ssdm_sc_biguint = 3,
+};
+
+
+
+enum SsdmPortTypes {
+    _ssdm_sc_in = 0,
+    _ssdm_sc_out = 1,
+    _ssdm_sc_inout = 2,
+    _ssdm_sc_in_clk,
+
+    _ssdm_fifo_in,
+    _ssdm_sc_fifo_in = _ssdm_fifo_in,
+    _ssdm_tlm_fifo_in = _ssdm_fifo_in,
+    _ssdm_fifo_out,
+    _ssdm_sc_fifo_out = _ssdm_fifo_out,
+    _ssdm_tlm_fifo_out = _ssdm_fifo_out,
+    _ssdm_fifo_inout,
+    _ssdm_sc_fifo_inout = _ssdm_fifo_inout,
+    _ssdm_tlm_fifo_inout = _ssdm_fifo_inout,
+    _ssdm_sc_bus,
+    _ssdm_hls_bus_port = _ssdm_sc_bus,
+    _ssdm_AXI4M_bus_port = _ssdm_sc_bus,
+    _ssdm_port_end,
+};
+
+
+
+enum SsdmProcessTypes {
+    _ssdm_method = 0,
+    _ssdm_sc_method = _ssdm_method,
+    _ssdm_thread = 1,
+    _ssdm_sc_thread = _ssdm_thread,
+    _ssdm_cthread = 2,
+    _ssdm_sc_cthread = _ssdm_cthread,
+    _ssdm_process_end,
+};
+
+
+
+enum SsdmSensitiveTypes {
+    _ssdm_sensitive = 0,
+    _ssdm_sensitive_pos,
+    _ssdm_sensitive_neg,
+    _ssdm_sensitive_reset0,
+    _ssdm_sensitive_reset1,
+    _ssdm_sensitive_end,
+};
+
+
+
+enum SsdmChannelTypes {
+    _ssdm_sc_sig,
+    _ssdm_fifo,
+    _ssdm_sc_fifo = _ssdm_fifo,
+    _ssdm_mem_fifo,
+    _ssdm_sc_mem_fifo = _ssdm_mem_fifo,
+};
+
+
+enum SsdmRegionTypes {
+    _ssdm_region_reset,
+    _ssdm_region_protocol,
+    _ssdm_region_pipeline,
+    _ssdm_region_parallel,
+};
+# 67 "F:/Xilinx/Vivado/2019.1/common/technology/autopilot\\hls_stream.h" 2
+
+
+namespace hls {
+# 78 "F:/Xilinx/Vivado/2019.1/common/technology/autopilot\\hls_stream.h"
+template<typename __STREAM_T__>
+class stream
+{
+  public:
+
+    inline __attribute__((always_inline)) stream() {
+    }
+
+    inline __attribute__((always_inline)) stream(const char* name) {
+    }
+
+
+  private:
+    inline __attribute__((always_inline)) stream(const stream< __STREAM_T__ >& chn):V(chn.V) {
+    }
+
+    inline __attribute__((always_inline)) stream& operator= (const stream< __STREAM_T__ >& chn) {
+        V = chn.V;
+        return *this;
+    }
+
+  public:
+
+    inline __attribute__((always_inline)) void operator >> (__STREAM_T__& rdata) {
+        read(rdata);
+    }
+
+    inline __attribute__((always_inline)) void operator << (const __STREAM_T__& wdata) {
+        write(wdata);
+    }
+
+
+  public:
+
+    inline __attribute__((always_inline)) bool empty() const {
+
+        bool tmp = _ssdm_StreamCanRead(&V);
+        return !tmp;
+
+
+
+    }
+
+    inline __attribute__((always_inline)) bool full() const {
+
+        bool tmp = _ssdm_StreamCanWrite(&V);
+        return !tmp;
+
+
+
+    }
+
+
+    inline __attribute__((always_inline)) void read(__STREAM_T__& dout) {
+
+        __STREAM_T__ tmp;
+        _ssdm_StreamRead(&V, &tmp);
+        dout = tmp;
+
+
+
+    }
+
+    inline __attribute__((always_inline)) __STREAM_T__ read() {
+       __STREAM_T__ tmp;
+       read(tmp);
+       return tmp;
+    }
+
+
+    inline __attribute__((always_inline)) bool read_nb(__STREAM_T__& dout) {
+
+        __STREAM_T__ tmp;
+        bool empty_n = _ssdm_StreamNbRead(&V, &tmp);
+        dout = tmp;
+        return empty_n;
+
+
+
+    }
+
+
+    inline __attribute__((always_inline)) void write(const __STREAM_T__& din) {
+
+        __STREAM_T__ tmp = din;
+        _ssdm_StreamWrite(&V, &tmp);
+
+
+
+    }
+
+
+    inline __attribute__((always_inline)) bool write_nb(const __STREAM_T__& din) {
+
+        __STREAM_T__ tmp = din;
+        bool full_n = _ssdm_StreamNbWrite(&V, &tmp);
+        return full_n;
+
+
+
+    }
+
+
+
+    inline __attribute__((always_inline)) unsigned size() {
+        unsigned size = _ssdm_StreamSize(&V);
+        return size;
+    }
+
+
+  public:
+    __STREAM_T__ V;
+};
+
+
+}
+# 4 "BoostingTree/BoostingTree.cpp" 2
 # 1 "BoostingTree/Tree_Param.hpp" 1
 
 
@@ -37308,30 +37506,37 @@ const TreeNode LBoostTree[64][196] = {
       {1, 0, -0.003714f, 0, 0},
    },
 };
-# 4 "BoostingTree/BoostingTree.cpp" 2
+# 5 "BoostingTree/BoostingTree.cpp" 2
 
 
 
 
-
-
-float predict_ensemble(const float features[13]) {_ssdm_SpecArrayDimSize(features, 13);
+void predict_ensemble(hls::stream<float>& feature_stream,
+  hls::stream<float>& prediction_stream) {
+_ssdm_op_SpecInterface(&prediction_stream, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&feature_stream, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_SpecArrayPartition( &LBoostTree, 1, "BLOCK", 4, "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "CTRL_BUS", "", "", 0, 0, 0, 0, "", "");
 
+
+
+ float features[13];
+_ssdm_SpecArrayPartition( features, 1, "COMPLETE", 0, "");
+ Feature_Load:for(int i = 0; i < 13; i++)
+ {
+  features[i] = feature_stream.read();
+ }
+
+
  float sum = 0;
-
-    for (int i = 0; i < 64; i++) {
-_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
-
-
- int current_addr = 0;
+ Tree_Tranversal:for (int i = 0; i < 64; i++) {
+        int current_addr = 0;
         TreeNode node;
-        while (true) {
-_ssdm_op_SpecLoopTripCount(1, 20, 10, "");
+        LOOP_TREE_DEPTH:for(int depth = 0; depth < 196; depth++) {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
  node = LBoostTree[i][current_addr];
             if (node.is_leaf) {
-                sum += node.value;
+             sum += node.value;
                 break;
             }
 
@@ -37340,5 +37545,6 @@ _ssdm_op_SpecLoopTripCount(1, 20, 10, "");
                           node.left_child : node.right_child;
         }
     }
-    return sum;
+
+ prediction_stream.write(sum);
 }

@@ -2,47 +2,60 @@
 <Messages>
 	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;BoostingTree/BoostingTree.cpp&apos; ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:54 . Memory (MB): peak = 184.426 ; gain = 94.012"/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:54 . Memory (MB): peak = 184.426 ; gain = 94.012"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:58 . Memory (MB): peak = 184.680 ; gain = 93.594"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:58 . Memory (MB): peak = 184.680 ; gain = 93.594"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:11 ; elapsed = 00:01:06 . Memory (MB): peak = 449.078 ; gain = 358.664"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:13 ; elapsed = 00:01:11 . Memory (MB): peak = 449.398 ; gain = 358.312"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:01:06 . Memory (MB): peak = 449.078 ; gain = 358.664"/>
-	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;Loop-1&apos; (BoostingTree/BoostingTree.cpp:16) in function &apos;predict_ensemble&apos; for pipelining."/>
-	<Message severity="WARNING" prefix="[XFORM 203-503]" key="XFORM_UNROLL_INVALID_314" tag="LOOP,SDX_LOOP" content="Cannot unroll loop &apos;Loop-1.1&apos; (BoostingTree/BoostingTree.cpp:25) in function &apos;predict_ensemble&apos; completely: variable loop bound."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:13 ; elapsed = 00:01:12 . Memory (MB): peak = 449.398 ; gain = 358.312"/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_111" tag="" content="Partitioning array &apos;LBoostTree.is_leaf&apos;  in dimension 1 with a block factor 4."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_111" tag="" content="Partitioning array &apos;LBoostTree.feature_index.V&apos;  in dimension 1 with a block factor 4."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_111" tag="" content="Partitioning array &apos;LBoostTree.value&apos;  in dimension 1 with a block factor 4."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_111" tag="" content="Partitioning array &apos;LBoostTree.left_child.V&apos;  in dimension 1 with a block factor 4."/>
 	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_111" tag="" content="Partitioning array &apos;LBoostTree.right_child.V&apos;  in dimension 1 with a block factor 4."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.4[16 x [196 x i1]]P.i32.i64.i64&apos; into &apos;predict_ensemble&apos; (BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:24)."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.4[16 x [196 x i4]]P.i32.i64.i64&apos; into &apos;predict_ensemble&apos; (BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:24)."/>
-	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.4[16 x [196 x float]]P.i32.i64.i64&apos; into &apos;predict_ensemble&apos; (BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:24)."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:01:07 . Memory (MB): peak = 449.078 ; gain = 358.664"/>
-	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;Loop-1&apos; (BoostingTree/BoostingTree.cpp:16:19) in function &apos;predict_ensemble&apos; : 
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;features&apos; (BoostingTree/BoostingTree.cpp:18) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.4[16 x [196 x i1]]P.i32.i64.i64&apos; into &apos;predict_ensemble&apos; (BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:32)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.4[16 x [196 x i4]]P.i32.i64.i64&apos; into &apos;predict_ensemble&apos; (BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:32)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;aesl_mux_load.4[16 x [196 x float]]P.i32.i64.i64&apos; into &apos;predict_ensemble&apos; (BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:32)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:14 ; elapsed = 00:01:13 . Memory (MB): peak = 449.398 ; gain = 358.312"/>
+	<Message severity="WARNING" prefix="[XFORM 203-542]" key="XFORM_LOOPFLAT_INVALID_219" tag="LOOP,SDX_LOOP" content="Cannot flatten a loop nest &apos;Tree_Tranversal&apos; (BoostingTree/BoostingTree.cpp:27:48) in function &apos;predict_ensemble&apos; : 
 
-the outer loop is not a perfect loop because there is nontrivial logic in the sub loop header."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:01:07 . Memory (MB): peak = 449.078 ; gain = 358.664"/>
+the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:14 ; elapsed = 00:01:14 . Memory (MB): peak = 449.398 ; gain = 358.312"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;predict_ensemble&apos; ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;predict_ensemble&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
-	<Message severity="WARNING" prefix="[SCHED 204-65]" key="SCHED_PIPELINE_REPORT_FAILURE_1080" tag="SCHEDULE" content="Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;LOOP_TREE_DEPTH&apos;."/>
+	<Message severity="WARNING" prefix="[SCHED 204-64]" key="SCHED_EXIT_TEST_TOO_LATE_49" tag="LOOP,SDX_LOOP,SCHEDULE" content="Unable to schedule the loop exit test (&apos;select&apos; operation (&apos;node.is_leaf&apos;, aesl_mux_load.4[16 x [196 x i1]]P.i32.i64.i64:13-&gt;BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:32)) in the first pipeline iteration (II = 1 cycles)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-68]" key="SCHED_CARRIED_CONSTRAINT_NOT_MET_32" tag="LOOP,SDX_LOOP,SCHEDULE" content="The II Violation in module &apos;predict_ensemble&apos; (Loop: LOOP_TREE_DEPTH): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between &apos;fcmp&apos; operation (&apos;tmp_1&apos;, BoostingTree/BoostingTree.cpp:39) and &apos;load&apos; operation (&apos;LBoostTree_is_leaf_3_2&apos;, aesl_mux_load.4[16 x [196 x i1]]P.i32.i64.i64:11-&gt;BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:32) on array &apos;LBoostTree_is_leaf_3&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 3, Depth = 4."/>
+	<Message severity="WARNING" prefix="[SCHED 204-21]" key="SCHED_DELAY_EXCEEDED_76" tag="SDX_KERNEL,SCHEDULE" content="Estimated clock period (9.7626ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns)."/>
+	<Message severity="WARNING" prefix="[SCHED 204-21]" key="SCHED_DELAY_EXCEEDED_74" tag="SDX_KERNEL,SCHEDULE" content="The critical path in module &apos;predict_ensemble&apos; consists of the following:
+	&apos;fcmp&apos; operation (&apos;tmp_1&apos;, BoostingTree/BoostingTree.cpp:39) [213]  (4.2 ns)
+	&apos;and&apos; operation (&apos;and_ln39_1&apos;, BoostingTree/BoostingTree.cpp:39) [214]  (0.8 ns)
+	&apos;select&apos; operation (&apos;select_ln39&apos;, BoostingTree/BoostingTree.cpp:39) [215]  (0.448 ns)
+	&apos;phi&apos; operation (&apos;curren_0&apos;, BoostingTree/BoostingTree.cpp:39) with incoming values : (&apos;select_ln39&apos;, BoostingTree/BoostingTree.cpp:39) [119]  (0 ns)
+	&apos;add&apos; operation (&apos;add_ln1&apos;, aesl_mux_load.4[16 x [196 x i4]]P.i32.i64.i64:1-&gt;BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:32) [130]  (1.55 ns)
+	&apos;getelementptr&apos; operation (&apos;LBoostTree_feature_i_7&apos;, aesl_mux_load.4[16 x [196 x i4]]P.i32.i64.i64:10-&gt;BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:32) [135]  (0 ns)
+	&apos;load&apos; operation (&apos;LBoostTree_feature_i_8&apos;, aesl_mux_load.4[16 x [196 x i4]]P.i32.i64.i64:11-&gt;BoostingTree/Tree_Param.hpp:5-&gt;BoostingTree/BoostingTree.cpp:32) on array &apos;LBoostTree_feature_i&apos; [159]  (2.77 ns)"/>
 	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 67.017 seconds; current allocated memory: 252.366 MB."/>
-	<Message severity="INFO" prefix="[HLS 200-434]" key="HLS 200-434" tag="SDX" content="Only 0 loops out of a total 2 loops have been pipelined in this design."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 73.799 seconds; current allocated memory: 253.396 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-434]" key="HLS 200-434" tag="SDX" content="Only 1 loops out of a total 3 loops have been pipelined in this design."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
 	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
 	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.198 seconds; current allocated memory: 252.978 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.336 seconds; current allocated memory: 254.389 MB."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;predict_ensemble&apos;"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
-	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;predict_ensemble/features&apos; to &apos;ap_memory&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;predict_ensemble/feature_stream_V&apos; to &apos;axis&apos; (register, both mode)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;predict_ensemble/prediction_stream_V&apos; to &apos;axis&apos; (register, both mode)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;predict_ensemble&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;."/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;predict_ensemble_LBoostTree_is_leaf_3&apos; to &apos;predict_ensemble_bkb&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;predict_ensemble_LBoostTree_is_leaf_0&apos; to &apos;predict_ensemble_cud&apos; due to the length limit 20"/>
@@ -68,11 +81,13 @@ the outer loop is not a perfect loop because there is nontrivial logic in the su
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;predict_ensemble_fadd_32ns_32ns_32_4_full_dsp_1&apos; to &apos;predict_ensemble_vdy&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;predict_ensemble_fcmp_32ns_32ns_1_2_1&apos; to &apos;predict_ensemble_wdI&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;predict_ensemble_mux_432_8_1_1&apos; to &apos;predict_ensemble_xdS&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;predict_ensemble_mux_134_32_1_1&apos; to &apos;predict_ensemble_yd2&apos; due to the length limit 20"/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;predict_ensemble_vdy&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;predict_ensemble_wdI&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;predict_ensemble_xdS&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;predict_ensemble_yd2&apos;: 1 instance(s)."/>
 	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;predict_ensemble&apos;."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.353 seconds; current allocated memory: 254.091 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.607 seconds; current allocated memory: 256.041 MB."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;predict_ensemble_bkb_rom&apos; using auto ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;predict_ensemble_cud_rom&apos; using auto ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;predict_ensemble_dEe_rom&apos; using auto ROMs."/>
@@ -93,7 +108,7 @@ the outer loop is not a perfect loop because there is nontrivial logic in the su
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;predict_ensemble_sc4_rom&apos; using auto ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;predict_ensemble_tde_rom&apos; using auto ROMs."/>
 	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;predict_ensemble_udo_rom&apos; using auto ROMs."/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:00:16 ; elapsed = 00:01:12 . Memory (MB): peak = 449.078 ; gain = 358.664"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:00:19 ; elapsed = 00:01:20 . Memory (MB): peak = 449.398 ; gain = 358.312"/>
 	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for predict_ensemble."/>
 	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for predict_ensemble."/>
 </Messages>

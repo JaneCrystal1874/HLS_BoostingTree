@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'predict_ensemble'" level="0">
-<item name = "Date">Fri Mar  7 11:07:14 2025
+<item name = "Date">Wed Mar 12 15:23:55 2025
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">BoostingTree</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.588, 1.25</column>
+<column name="ap_clk">10.00, 9.763, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">705, 5569, 705, 5569, none</column>
+<column name="">605, 38237, 605, 38237, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,8 +35,9 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">704, 5568, 11 ~ 87, -, -, 64, no</column>
-<column name=" + Loop 1.1">5, 81, 4, -, -, 1 ~ 20, no</column>
+<column name="- Feature_Load">26, 26, 2, -, -, 13, no</column>
+<column name="- Tree_Tranversal">576, 38208, 9 ~ 597, -, -, 64, no</column>
+<column name=" + LOOP_TREE_DEPTH">5, 590, 4, 3, 1, 1 ~ 196, yes</column>
 </table>
 </item>
 </section>

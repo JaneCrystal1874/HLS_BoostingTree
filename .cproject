@@ -53,8 +53,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/include/ap_sysc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="E:/SEU/Graduation_Prj"/>
-                                    									
                                     <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/win64/tools/auto_cc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/win64/tools/systemc/include"/>
@@ -88,8 +86,6 @@
                                 <option id="gnu.c.compiler.option.include.paths.1578019751" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/include/ap_sysc"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="E:/SEU/Graduation_Prj"/>
                                     									
                                     <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/win64/tools/auto_cc/include"/>
                                     									
@@ -161,6 +157,36 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1505416096.2002288648" name="test_predict_ensemble.cpp" rcbsApplicability="disable" resourcePath="testbench/test_predict_ensemble.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.2126830450.1351577400">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.2126830450.1351577400" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.2126830450">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.151113497" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+                            							
+                            <option id="gnu.cpp.compiler.option.include.paths.1276871459" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/include/ap_sysc"/>
+                                								
+                                <listOptionValue builtIn="false" value="E:/SEU/Graduation_Prj"/>
+                                								
+                                <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/win64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/win64/tools/systemc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/include"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.1475512167" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.934696366" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
                     <sourceEntries>
                         						
                         <entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
@@ -225,8 +251,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/include/ap_sysc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="E:/SEU/Graduation_Prj"/>
-                                    									
                                     <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/win64/tools/auto_cc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/win64/tools/systemc/include"/>
@@ -250,8 +274,6 @@
                                 <option id="gnu.c.compiler.option.include.paths.500180378" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/include/ap_sysc"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="E:/SEU/Graduation_Prj"/>
                                     									
                                     <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/win64/tools/auto_cc/include"/>
                                     									
@@ -312,6 +334,36 @@
                         </toolChain>
                         					
                     </folderInfo>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.822124924.2036222314" name="test_predict_ensemble.cpp" rcbsApplicability="disable" resourcePath="testbench/test_predict_ensemble.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1971118304.281478826">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1971118304.281478826" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1971118304">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.1254705944" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+                            							
+                            <option id="gnu.cpp.compiler.option.include.paths.327162879" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/include/ap_sysc"/>
+                                								
+                                <listOptionValue builtIn="false" value="E:/SEU/Graduation_Prj"/>
+                                								
+                                <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/win64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/win64/tools/systemc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="F:/Xilinx/Vivado/2019.1/include"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.1231115195" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.948396603" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
                     					
                     <sourceEntries>
                         						

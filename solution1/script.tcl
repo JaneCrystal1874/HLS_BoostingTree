@@ -5,14 +5,15 @@
 ############################################################
 open_project BoostingTree
 set_top predict_ensemble
-add_files BoostingTree/BoostingTree.cpp
 add_files BoostingTree/Tree_Param.hpp
-add_files -tb BoostingTree/test_predict_ensemble.cpp
+add_files BoostingTree/BoostingTree.cpp
+add_files -tb BoostingTree/test_predict_ensemble.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution1"
 set_part {xc7z020-clg400-2} -tool vivado
 create_clock -period 10 -name default
+config_export -description float_predict_ensemble -format ip_catalog -rtl verilog
 #source "./BoostingTree/solution1/directives.tcl"
 csim_design
 csynth_design
 cosim_design
-export_design -format ip_catalog
+export_design -rtl verilog -format ip_catalog -description "float_predict_ensemble"

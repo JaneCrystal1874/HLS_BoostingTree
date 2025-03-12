@@ -73,15 +73,6 @@ void XPredict_ensemble_DisableAutoRestart(XPredict_ensemble *InstancePtr) {
     XPredict_ensemble_WriteReg(InstancePtr->Ctrl_bus_BaseAddress, XPREDICT_ENSEMBLE_CTRL_BUS_ADDR_AP_CTRL, 0);
 }
 
-u32 XPredict_ensemble_Get_return(XPredict_ensemble *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XPredict_ensemble_ReadReg(InstancePtr->Ctrl_bus_BaseAddress, XPREDICT_ENSEMBLE_CTRL_BUS_ADDR_AP_RETURN);
-    return Data;
-}
 void XPredict_ensemble_InterruptGlobalEnable(XPredict_ensemble *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

@@ -270,8 +270,147 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 }
 
 
+set id 5
+set name predict_ensemble_yd2
+set corename simcore_mux
+set op mux
+set stage_num 1
+set max_latency -1
+set registered_input 1
+set din0_width 32
+set din0_signed 0
+set din1_width 32
+set din1_signed 0
+set din2_width 32
+set din2_signed 0
+set din3_width 32
+set din3_signed 0
+set din4_width 32
+set din4_signed 0
+set din5_width 32
+set din5_signed 0
+set din6_width 32
+set din6_signed 0
+set din7_width 32
+set din7_signed 0
+set din8_width 32
+set din8_signed 0
+set din9_width 32
+set din9_signed 0
+set din10_width 32
+set din10_signed 0
+set din11_width 32
+set din11_signed 0
+set din12_width 32
+set din12_signed 0
+set din13_width 4
+set din13_signed 0
+set dout_width 32
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mux] == "ap_gen_simcore_mux"} {
+eval "ap_gen_simcore_mux { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${stage_num} \
+    max_latency ${max_latency} \
+    registered_input ${registered_input} \
+    din0_width ${din0_width} \
+    din0_signed ${din0_signed} \
+    din1_width ${din1_width} \
+    din1_signed ${din1_signed} \
+    din2_width ${din2_width} \
+    din2_signed ${din2_signed} \
+    din3_width ${din3_width} \
+    din3_signed ${din3_signed} \
+    din4_width ${din4_width} \
+    din4_signed ${din4_signed} \
+    din5_width ${din5_width} \
+    din5_signed ${din5_signed} \
+    din6_width ${din6_width} \
+    din6_signed ${din6_signed} \
+    din7_width ${din7_width} \
+    din7_signed ${din7_signed} \
+    din8_width ${din8_width} \
+    din8_signed ${din8_signed} \
+    din9_width ${din9_width} \
+    din9_signed ${din9_signed} \
+    din10_width ${din10_width} \
+    din10_signed ${din10_signed} \
+    din11_width ${din11_width} \
+    din11_signed ${din11_signed} \
+    din12_width ${din12_width} \
+    din12_signed ${din12_signed} \
+    din13_width ${din13_width} \
+    din13_signed ${din13_signed} \
+    dout_width ${dout_width} \
+}"
+} else {
+puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mux, check your AutoPilot builtin lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler ${name}
+}
+
+
+set op mux
+set corename MuxnS
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_pipemux] == "::AESL_LIB_VIRTEX::xil_gen_pipemux"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_pipemux { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${stage_num} \
+    max_latency ${max_latency} \
+    registered_input ${registered_input} \
+    din0_width ${din0_width} \
+    din0_signed ${din0_signed} \
+    din1_width ${din1_width} \
+    din1_signed ${din1_signed} \
+    din2_width ${din2_width} \
+    din2_signed ${din2_signed} \
+    din3_width ${din3_width} \
+    din3_signed ${din3_signed} \
+    din4_width ${din4_width} \
+    din4_signed ${din4_signed} \
+    din5_width ${din5_width} \
+    din5_signed ${din5_signed} \
+    din6_width ${din6_width} \
+    din6_signed ${din6_signed} \
+    din7_width ${din7_width} \
+    din7_signed ${din7_signed} \
+    din8_width ${din8_width} \
+    din8_signed ${din8_signed} \
+    din9_width ${din9_width} \
+    din9_signed ${din9_signed} \
+    din10_width ${din10_width} \
+    din10_signed ${din10_signed} \
+    din11_width ${din11_width} \
+    din11_signed ${din11_signed} \
+    din12_width ${din12_width} \
+    din12_signed ${din12_signed} \
+    din13_width ${din13_width} \
+    din13_signed ${din13_signed} \
+    dout_width ${dout_width} \
+}"
+} else {
+puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your platform lib"
+}
+}
+
+
 # Memory (RAM/ROM)  definition:
-set ID 8
+set ID 10
 set hasByteEnable 0
 set MemName predict_ensemble_bkb
 set CoreName ap_simcore_mem
@@ -354,7 +493,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 9
+set ID 11
 set hasByteEnable 0
 set MemName predict_ensemble_cud
 set CoreName ap_simcore_mem
@@ -437,7 +576,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 10
+set ID 12
 set hasByteEnable 0
 set MemName predict_ensemble_dEe
 set CoreName ap_simcore_mem
@@ -520,7 +659,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 11
+set ID 13
 set hasByteEnable 0
 set MemName predict_ensemble_eOg
 set CoreName ap_simcore_mem
@@ -603,7 +742,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 12
+set ID 14
 set hasByteEnable 0
 set MemName predict_ensemble_fYi
 set CoreName ap_simcore_mem
@@ -686,7 +825,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 13
+set ID 15
 set hasByteEnable 0
 set MemName predict_ensemble_g8j
 set CoreName ap_simcore_mem
@@ -769,7 +908,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 14
+set ID 16
 set hasByteEnable 0
 set MemName predict_ensemble_hbi
 set CoreName ap_simcore_mem
@@ -852,7 +991,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 15
+set ID 17
 set hasByteEnable 0
 set MemName predict_ensemble_ibs
 set CoreName ap_simcore_mem
@@ -935,7 +1074,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 16
+set ID 18
 set hasByteEnable 0
 set MemName predict_ensemble_jbC
 set CoreName ap_simcore_mem
@@ -1018,7 +1157,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 17
+set ID 19
 set hasByteEnable 0
 set MemName predict_ensemble_kbM
 set CoreName ap_simcore_mem
@@ -1101,7 +1240,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 18
+set ID 20
 set hasByteEnable 0
 set MemName predict_ensemble_lbW
 set CoreName ap_simcore_mem
@@ -1184,7 +1323,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 19
+set ID 21
 set hasByteEnable 0
 set MemName predict_ensemble_mb6
 set CoreName ap_simcore_mem
@@ -1267,7 +1406,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 20
+set ID 22
 set hasByteEnable 0
 set MemName predict_ensemble_ncg
 set CoreName ap_simcore_mem
@@ -1350,7 +1489,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 21
+set ID 23
 set hasByteEnable 0
 set MemName predict_ensemble_ocq
 set CoreName ap_simcore_mem
@@ -1433,7 +1572,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 22
+set ID 24
 set hasByteEnable 0
 set MemName predict_ensemble_pcA
 set CoreName ap_simcore_mem
@@ -1516,7 +1655,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 23
+set ID 25
 set hasByteEnable 0
 set MemName predict_ensemble_qcK
 set CoreName ap_simcore_mem
@@ -1599,7 +1738,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 24
+set ID 26
 set hasByteEnable 0
 set MemName predict_ensemble_rcU
 set CoreName ap_simcore_mem
@@ -1682,7 +1821,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 25
+set ID 27
 set hasByteEnable 0
 set MemName predict_ensemble_sc4
 set CoreName ap_simcore_mem
@@ -1765,7 +1904,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 26
+set ID 28
 set hasByteEnable 0
 set MemName predict_ensemble_tde
 set CoreName ap_simcore_mem
@@ -1848,7 +1987,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 27
+set ID 29
 set hasByteEnable 0
 set MemName predict_ensemble_udo
 set CoreName ap_simcore_mem
@@ -1943,14 +2082,6 @@ ap_start { }
 ap_done { }
 ap_ready { }
 ap_idle { }
-ap_return { 
-	dir o
-	width 32
-	depth 1
-	mode ap_ctrl_hs
-	offset 16
-	offset_end 0
-}
 }
 dict set axilite_register_dict CTRL_BUS $port_CTRL_BUS
 
@@ -1959,7 +2090,7 @@ dict set axilite_register_dict CTRL_BUS $port_CTRL_BUS
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 28 \
+			id 30 \
 			corename predict_ensemble_CTRL_BUS_axilite \
 			name predict_ensemble_CTRL_BUS_s_axi \
 			ports {$port_CTRL_BUS} \
@@ -1975,38 +2106,43 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler predict_ensemble_CTRL_BUS_s_axi
 }
 
-# XIL_BRAM:
+# Native AXIS:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 29 \
-    name features \
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 31 \
+    name feature_stream_V \
     reset_level 0 \
     sync_rst true \
-    dir I \
-    corename features \
+    corename {} \
+    metadata {  } \
     op interface \
-    ports { features_address0 { O 4 vector } features_ce0 { O 1 bit } features_q0 { I 32 vector } } \
+    ports { feature_stream_V_TDATA { I 32 vector } feature_stream_V_TVALID { I 1 bit } feature_stream_V_TREADY { O 1 bit } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'features'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'feature_stream_V'"
 }
 }
 
 
-# Direct connection:
+# Native AXIS:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id -1 \
-    name ap_return \
-    type ap_return \
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 32 \
+    name prediction_stream_V \
     reset_level 0 \
     sync_rst true \
-    corename ap_return \
+    corename {} \
+    metadata {  } \
     op interface \
-    ports { ap_return { O 32 vector } } \
+    ports { prediction_stream_V_TDATA { O 32 vector } prediction_stream_V_TVALID { O 1 bit } prediction_stream_V_TREADY { I 1 bit } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'prediction_stream_V'"
 }
+}
+
 
 
 # Adapter definition:
@@ -2015,7 +2151,7 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_clock] == "cg_default_interface_gen_clock"} {
 eval "cg_default_interface_gen_clock { \
-    id -2 \
+    id -1 \
     name ${PortName} \
     reset_level 0 \
     sync_rst true \
@@ -2035,7 +2171,7 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_reset] == "cg_default_interface_gen_reset"} {
 eval "cg_default_interface_gen_reset { \
-    id -3 \
+    id -2 \
     name ${PortName} \
     reset_level 0 \
     sync_rst true \

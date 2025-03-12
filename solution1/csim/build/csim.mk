@@ -55,6 +55,7 @@ IFLAG += -D__SIM_FIR__
 IFLAG += -D__SIM_DDS__
 
 IFLAG += -D__DSP48E1__
+IFLAG += -Wno-unknown-pragmas 
 IFLAG += -g
 IFLAG += -DNT
 LFLAG += -Wl,--enable-auto-import 
@@ -72,7 +73,7 @@ all: $(TARGET)
 
 $(ObjDir)/test_predict_ensemble.o: ../../../test_predict_ensemble.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../test_predict_ensemble.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/test_predict_ensemble.d
 

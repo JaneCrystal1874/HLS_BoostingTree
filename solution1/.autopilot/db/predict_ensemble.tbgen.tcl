@@ -12,31 +12,35 @@ set ProfileFlag 0
 set StallSigGenFlag 0
 set isEnableWaveformDebug 1
 set C_modelName {predict_ensemble}
-set C_modelType { float 32 }
+set C_modelType { void 0 }
 set C_modelArgList {
-	{ features float 32 regular {array 13 { 1 3 } 1 1 }  }
+	{ feature_stream_V float 32 regular {axi_s 0 volatile  { feature_stream_V Data } }  }
+	{ prediction_stream_V float 32 regular {axi_s 1 volatile  { prediction_stream_V Data } }  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "features", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "features","cData": "float","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 12,"step" : 1}]}]}]} , 
- 	{ "Name" : "ap_return", "interface" : "axi_slave", "bundle":"CTRL_BUS","type":"ap_none","bitwidth" : 32,"bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "return","cData": "float","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 1,"step" : 0}]}]}], "offset" : {"out":16}} ]}
+	{ "Name" : "feature_stream_V", "interface" : "axis", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "feature_stream.V","cData": "float","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "prediction_stream_V", "interface" : "axis", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "prediction_stream.V","cData": "float","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} ]}
 # RTL Port declarations: 
-set portNum 23
+set portNum 26
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
-	{ features_address0 sc_out sc_lv 4 signal 0 } 
-	{ features_ce0 sc_out sc_logic 1 signal 0 } 
-	{ features_q0 sc_in sc_lv 32 signal 0 } 
+	{ feature_stream_V_TDATA sc_in sc_lv 32 signal 0 } 
+	{ feature_stream_V_TVALID sc_in sc_logic 1 invld 0 } 
+	{ feature_stream_V_TREADY sc_out sc_logic 1 inacc 0 } 
+	{ prediction_stream_V_TDATA sc_out sc_lv 32 signal 1 } 
+	{ prediction_stream_V_TVALID sc_out sc_logic 1 outvld 1 } 
+	{ prediction_stream_V_TREADY sc_in sc_logic 1 outacc 1 } 
 	{ s_axi_CTRL_BUS_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_BUS_AWREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_CTRL_BUS_AWADDR sc_in sc_lv 5 signal -1 } 
+	{ s_axi_CTRL_BUS_AWADDR sc_in sc_lv 4 signal -1 } 
 	{ s_axi_CTRL_BUS_WVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_BUS_WREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_BUS_WDATA sc_in sc_lv 32 signal -1 } 
 	{ s_axi_CTRL_BUS_WSTRB sc_in sc_lv 4 signal -1 } 
 	{ s_axi_CTRL_BUS_ARVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_BUS_ARREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_CTRL_BUS_ARADDR sc_in sc_lv 5 signal -1 } 
+	{ s_axi_CTRL_BUS_ARADDR sc_in sc_lv 4 signal -1 } 
 	{ s_axi_CTRL_BUS_RVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_BUS_RREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_BUS_RDATA sc_out sc_lv 32 signal -1 } 
@@ -47,14 +51,14 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_CTRL_BUS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "AWADDR" },"address":[{"name":"predict_ensemble","role":"start","value":"0","valid_bit":"0"},{"name":"predict_ensemble","role":"continue","value":"0","valid_bit":"4"},{"name":"predict_ensemble","role":"auto_start","value":"0","valid_bit":"7"}] },
+	{ "name": "s_axi_CTRL_BUS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "AWADDR" },"address":[{"name":"predict_ensemble","role":"start","value":"0","valid_bit":"0"},{"name":"predict_ensemble","role":"continue","value":"0","valid_bit":"4"},{"name":"predict_ensemble","role":"auto_start","value":"0","valid_bit":"7"}] },
 	{ "name": "s_axi_CTRL_BUS_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "AWVALID" } },
 	{ "name": "s_axi_CTRL_BUS_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "AWREADY" } },
 	{ "name": "s_axi_CTRL_BUS_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "WVALID" } },
 	{ "name": "s_axi_CTRL_BUS_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "WREADY" } },
 	{ "name": "s_axi_CTRL_BUS_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "WDATA" } },
 	{ "name": "s_axi_CTRL_BUS_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "WSTRB" } },
-	{ "name": "s_axi_CTRL_BUS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "ARADDR" },"address":[{"name":"predict_ensemble","role":"start","value":"0","valid_bit":"0"},{"name":"predict_ensemble","role":"done","value":"0","valid_bit":"1"},{"name":"predict_ensemble","role":"idle","value":"0","valid_bit":"2"},{"name":"predict_ensemble","role":"ready","value":"0","valid_bit":"3"},{"name":"predict_ensemble","role":"auto_start","value":"0","valid_bit":"7"},{"name":"return","role":"data","value":"16"}] },
+	{ "name": "s_axi_CTRL_BUS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "ARADDR" },"address":[{"name":"predict_ensemble","role":"start","value":"0","valid_bit":"0"},{"name":"predict_ensemble","role":"done","value":"0","valid_bit":"1"},{"name":"predict_ensemble","role":"idle","value":"0","valid_bit":"2"},{"name":"predict_ensemble","role":"ready","value":"0","valid_bit":"3"},{"name":"predict_ensemble","role":"auto_start","value":"0","valid_bit":"7"}] },
 	{ "name": "s_axi_CTRL_BUS_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "ARVALID" } },
 	{ "name": "s_axi_CTRL_BUS_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "ARREADY" } },
 	{ "name": "s_axi_CTRL_BUS_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "RVALID" } },
@@ -67,18 +71,21 @@ set NewPortList {[
 	{ "name": "interrupt", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL_BUS", "role": "interrupt" } }, 
  	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
  	{ "name": "ap_rst_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst_n", "role": "default" }} , 
- 	{ "name": "features_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "features", "role": "address0" }} , 
- 	{ "name": "features_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "features", "role": "ce0" }} , 
- 	{ "name": "features_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "features", "role": "q0" }}  ]}
+ 	{ "name": "feature_stream_V_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "feature_stream_V", "role": "TDATA" }} , 
+ 	{ "name": "feature_stream_V_TVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "feature_stream_V", "role": "TVALID" }} , 
+ 	{ "name": "feature_stream_V_TREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "feature_stream_V", "role": "TREADY" }} , 
+ 	{ "name": "prediction_stream_V_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "prediction_stream_V", "role": "TDATA" }} , 
+ 	{ "name": "prediction_stream_V_TVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "prediction_stream_V", "role": "TVALID" }} , 
+ 	{ "name": "prediction_stream_V_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "prediction_stream_V", "role": "TREADY" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26"],
 		"CDFG" : "predict_ensemble",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "705", "EstimateLatencyMax" : "5569",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "605", "EstimateLatencyMax" : "38237",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -86,7 +93,12 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "0",
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
-			{"Name" : "features", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "feature_stream_V", "Type" : "Axis", "Direction" : "I",
+				"BlockSignal" : [
+					{"Name" : "feature_stream_V_TDATA_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "prediction_stream_V", "Type" : "Axis", "Direction" : "O",
+				"BlockSignal" : [
+					{"Name" : "prediction_stream_V_TDATA_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "LBoostTree_is_leaf_3", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "LBoostTree_is_leaf_0", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "LBoostTree_is_leaf_1", "Type" : "Memory", "Direction" : "I"},
@@ -131,12 +143,14 @@ set RtlHierarchyInfo {[
 	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.predict_ensemble_vdy_U1", "Parent" : "0"},
 	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.predict_ensemble_wdI_U2", "Parent" : "0"},
 	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.predict_ensemble_xdS_U3", "Parent" : "0"},
-	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.predict_ensemble_xdS_U4", "Parent" : "0"}]}
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.predict_ensemble_xdS_U4", "Parent" : "0"},
+	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.predict_ensemble_yd2_U5", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	predict_ensemble {
-		features {Type I LastRead 3 FirstWrite -1}
+		feature_stream_V {Type I LastRead 1 FirstWrite -1}
+		prediction_stream_V {Type O LastRead -1 FirstWrite 2}
 		LBoostTree_is_leaf_3 {Type I LastRead -1 FirstWrite -1}
 		LBoostTree_is_leaf_0 {Type I LastRead -1 FirstWrite -1}
 		LBoostTree_is_leaf_1 {Type I LastRead -1 FirstWrite -1}
@@ -161,15 +175,17 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "705", "Max" : "5569"}
-	, {"Name" : "Interval", "Min" : "706", "Max" : "5570"}
+	{"Name" : "Latency", "Min" : "605", "Max" : "38237"}
+	, {"Name" : "Interval", "Min" : "606", "Max" : "38238"}
 ]}
 
 set PipelineEnableSignalInfo {[
+	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 ]}
 
 set Spec2ImplPortList { 
-	features { ap_memory {  { features_address0 mem_address 1 4 }  { features_ce0 mem_ce 1 1 }  { features_q0 mem_dout 0 32 } } }
+	feature_stream_V { axis {  { feature_stream_V_TDATA in_data 0 32 }  { feature_stream_V_TVALID in_vld 0 1 }  { feature_stream_V_TREADY in_acc 1 1 } } }
+	prediction_stream_V { axis {  { prediction_stream_V_TDATA out_data 1 32 }  { prediction_stream_V_TVALID out_vld 1 1 }  { prediction_stream_V_TREADY out_acc 0 1 } } }
 }
 
 set busDeadlockParameterList { 

@@ -1,6 +1,6 @@
 <InterfaceSummary>
 <RtlPorts>
-<name>features</name>
+<name>feature_stream_V</name>
 <CType>
 <TypeName>float</TypeName>
 <TypeWidth>32</TypeWidth>
@@ -10,7 +10,7 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>ap_return</name>
+<name>prediction_stream_V</name>
 <CType>
 <TypeName>float</TypeName>
 <TypeWidth>32</TypeWidth>

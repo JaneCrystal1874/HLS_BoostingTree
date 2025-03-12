@@ -83,7 +83,6 @@ u32 XPredict_ensemble_IsIdle(XPredict_ensemble *InstancePtr);
 u32 XPredict_ensemble_IsReady(XPredict_ensemble *InstancePtr);
 void XPredict_ensemble_EnableAutoRestart(XPredict_ensemble *InstancePtr);
 void XPredict_ensemble_DisableAutoRestart(XPredict_ensemble *InstancePtr);
-u32 XPredict_ensemble_Get_return(XPredict_ensemble *InstancePtr);
 
 
 void XPredict_ensemble_InterruptGlobalEnable(XPredict_ensemble *InstancePtr);
