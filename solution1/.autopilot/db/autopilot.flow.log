@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace E:/SEU/Graduation_Prj/BoostingTree/solution1 opened at Wed Mar 12 15:22:42 +0800 2025
+INFO-FLOW: Workspace E:/SEU/Graduation_Prj/BoostingTree/solution1 opened at Wed Mar 26 19:58:32 +0800 2025
 Execute     config_clock -quiet -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     open_platform DefaultPlatform 
@@ -40,11 +40,11 @@ Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interfac
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
-Command         ap_source done; 0.104 sec.
+Command         ap_source done; 0.186 sec.
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.161 sec.
-Command     ap_source done; 0.162 sec.
+Command       ap_source done; 0.249 sec.
+Command     ap_source done; 0.249 sec.
 Execute     open_platform DefaultPlatform 
 Execute     import_lib F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
 Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
@@ -59,7 +59,7 @@ Execute     source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fp
 Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 Execute     set_part xc7z020-clg400-2 
 Execute       ap_part_info -name xc7z020-clg400-2 -data single -quiet 
-Command       ap_part_info done; 0.657 sec.
+Command       ap_part_info done; 1.316 sec.
 Execute       ap_part_info -name xc7z020-clg400-2 -data info 
 Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-2 
 Execute         get_default_platform 
@@ -74,10 +74,22 @@ Execute         ap_part_info -name xc7z020-clg400-2 -data info
 Execute         config_chip_info -quiet -speed medium 
 Execute       add_library xilinx/zynq/zynq_fpv6 
 Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute             source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute               source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute               source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-2'
 Execute       ap_part_info -name xc7z020-clg400-2 -data info 
 Execute       get_default_platform 
-Command     set_part done; 0.785 sec.
+Command     set_part done; 1.481 sec.
 Execute     ap_part_info -data single -name xc7z020-clg400-2 
 Execute     ap_part_info -name xc7z020-clg400-2 -data resources 
 Execute     ap_part_info -name xc7z020-clg400-2 -data info 
@@ -85,13 +97,10 @@ Execute     ap_part_info -name xc7z020-clg400-2 -data info
 Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
 Execute     ap_part_info -name xc7z020-clg400-2 -data info 
 Execute     config_chip_info -quiet -speed medium 
-Execute     config_export -description=float_predict_ensemble 
-Execute     config_export -format=ip_catalog 
-Execute     config_export -rtl=verilog 
-Command   open_solution done; 1.009 sec.
-Execute   set_part xc7z020-clg400-2 -tool vivado 
-Execute     ap_part_info -name xc7z020-clg400-2 -data single -quiet 
-Execute     ap_part_info -name xc7z020-clg400-2 -data info 
+Command   open_solution done; 1.82 sec.
+Execute   set_part xc7z020clg400-2 -tool vivado 
+Execute     ap_part_info -name xc7z020clg400-2 -data single -quiet 
+Execute     ap_part_info -name xc7z020clg400-2 -data info 
 Execute     add_library xilinx/zynq/zynq:xc7z020:-clg400:-2 
 Execute       get_default_platform 
 Execute       license_isbetapart xc7z020 
@@ -105,11 +114,24 @@ Execute       ap_part_info -name xc7z020-clg400-2 -data info
 Execute       config_chip_info -quiet -speed medium 
 Execute     add_library xilinx/zynq/zynq_fpv6 
 Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       import_lib F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute             source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute             source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute               source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 Execute     ap_part_info -name xc7z020-clg400-2 -data info 
 Execute     get_default_platform 
-Command   set_part done; 0.118 sec.
+Command   set_part done; 0.172 sec.
 Execute   create_clock -period 10 -name default 
-Execute   config_export -description float_predict_ensemble -format ip_catalog -rtl verilog 
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute   csynth_design 
 Execute     get_config_compile -dump_cfg 
 Execute     get_config_compile -effort 
@@ -136,100 +158,105 @@ INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "F:/Xilinx/Vivado/2019.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "BoostingTree/BoostingTree.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "F:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "F:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp" 
 INFO-FLOW: exec F:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain F:/Xilinx/Vivado/2019.1/msys -hls -fno-exceptions -D__llvm__ -E BoostingTree/BoostingTree.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I F:/Xilinx/Vivado/2019.1/common/technology/autopilot -I F:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp
-Command       clang done; 1.326 sec.
+Command       clang done; 2.449 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec F:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 6.252 sec.
+Command       tidy_31 done; 4.78 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang -syntaxcheck -src E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "F:/Xilinx/Vivado/2019.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "F:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "F:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp"  -o "E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec F:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain F:/Xilinx/Vivado/2019.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I F:/Xilinx/Vivado/2019.1/common/technology/autopilot -I F:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/useless.bc
-Command       clang done; 5.05 sec.
-INFO-FLOW: Done: GCC PP time: 12.6 seconds per iteration
+Command       clang done; 7.283 sec.
+INFO-FLOW: Done: GCC PP time: 14.5 seconds per iteration
 Execute       source F:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute       source F:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
 Execute         source F:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/try/try.tcl 
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp std=gnu++98 -directive=E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec F:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 6.188 sec.
+Command       tidy_31 done; 5.305 sec.
 INFO-FLOW: Running: tidy-3.1 CDT preprocess
 Execute       tidy_31 xilinx-directive2pragma E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp std=gnu++98 -directive=E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec F:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/all.directive.json -quiet -fix-errors E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 5.904 sec.
+Command       tidy_31 done; 4.86 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr F:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/xilinx-dataflow-lawyer.BoostingTree.pp.0.cpp.diag.yml E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/xilinx-dataflow-lawyer.BoostingTree.pp.0.cpp.out.log 2> E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/xilinx-dataflow-lawyer.BoostingTree.pp.0.cpp.err.log 
-Command       ap_eval done; 4.046 sec.
+Command       ap_eval done; 2.738 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp std=gnu++98 
 Execute         ap_eval exec -ignorestderr F:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/tidy-3.1.BoostingTree.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/tidy-3.1.BoostingTree.pp.0.cpp.out.log 2> E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/tidy-3.1.BoostingTree.pp.0.cpp.err.log 
-Command         ap_eval done; 6.791 sec.
+Command         ap_eval done; 5.665 sec.
 Execute         source F:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
 Execute           source F:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
 Execute         ap_eval exec -ignorestderr F:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/xilinx-legacy-rewriter.BoostingTree.pp.0.cpp.out.log 2> E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/xilinx-legacy-rewriter.BoostingTree.pp.0.cpp.err.log 
-Command         ap_eval done; 3.704 sec.
-Command       tidy_31 done; 10.524 sec.
-INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 20.5 seconds per iteration
+Command         ap_eval done; 2.923 sec.
+Command       tidy_31 done; 8.632 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 16.2 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec F:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 8.041 sec.
+Command       tidy_31 done; 8.013 sec.
 Execute       ap_part_info -name xc7z020-clg400-2 -data info 
 INFO-FLOW: Processing labels
 Execute       clang -src E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain F:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "F:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "F:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.bc" 
 INFO-FLOW: exec F:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain F:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I F:/Xilinx/Vivado/2019.1/common/technology/autopilot -I F:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.bc
-Command       clang done; 5.977 sec.
+Command       clang done; 7.699 sec.
 INFO-FLOW: Linking Debug ...
 Execute       llvm-ld E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/BoostingTree.g.bc -hls-opt -except-internalize predict_ensemble -LF:/Xilinx/Vivado/2019.1/win64/lib -lhlsm -lhlsmc++ -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.g 
-Command       llvm-ld done; 2.56 sec.
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:58 . Memory (MB): peak = 184.680 ; gain = 93.594
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:58 . Memory (MB): peak = 184.680 ; gain = 93.594
+Command       llvm-ld done; 3.692 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:59 . Memory (MB): peak = 184.453 ; gain = 93.336
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:59 . Memory (MB): peak = 184.453 ; gain = 93.336
 Execute       get_config_sdx -target 
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 Execute         transform -promote-dbg-pointer E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.pp.bc -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.pp.0.bc -f 
-Command         transform done; 0.43 sec.
+Command         transform done; 0.283 sec.
 Execute         llvm-ld E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.pp.0.bc -disable-opt -LF:/Xilinx/Vivado/2019.1/win64/lib -lfloatconversion -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.g.0 
-Command         llvm-ld done; 1.4 sec.
+Command         llvm-ld done; 1.747 sec.
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top predict_ensemble -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.g.0.bc -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-Command         transform done; 11.736 sec.
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:13 ; elapsed = 00:01:11 . Memory (MB): peak = 449.398 ; gain = 358.312
+Command         transform done; 0.33 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:01:02 . Memory (MB): peak = 184.453 ; gain = 93.336
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.g.1.bc -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.g.2.prechk.bc -f 
-Command         transform done; 0.392 sec.
+Command         transform done; 0.417 sec.
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.g.2.prechk.bc -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-Command         transform done; 0.171 sec.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:13 ; elapsed = 00:01:12 . Memory (MB): peak = 449.398 ; gain = 358.312
+Command         transform done; 0.243 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:01:02 . Memory (MB): peak = 208.625 ; gain = 117.508
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.g.1.bc to E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
 Execute         transform -hls -tmp E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.o.1.bc -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.o.1.tmp.bc -f 
-INFO: [XFORM 203-101] Partitioning array 'LBoostTree.is_leaf'  in dimension 1 with a block factor 4.
-INFO: [XFORM 203-101] Partitioning array 'LBoostTree.feature_index.V'  in dimension 1 with a block factor 4.
-INFO: [XFORM 203-101] Partitioning array 'LBoostTree.value'  in dimension 1 with a block factor 4.
-INFO: [XFORM 203-101] Partitioning array 'LBoostTree.left_child.V'  in dimension 1 with a block factor 4.
-INFO: [XFORM 203-101] Partitioning array 'LBoostTree.right_child.V'  in dimension 1 with a block factor 4.
-INFO: [XFORM 203-101] Partitioning array 'features' (BoostingTree/BoostingTree.cpp:18) in dimension 1 completely.
-Command         transform done; 0.556 sec.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree1.is_leaf'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree1.feature_index.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree1.value'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree1.left_child.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree1.right_child.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree2.is_leaf'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree2.feature_index.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree2.value'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree2.left_child.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'LBoostTree2.right_child.V'  in dimension 1 with a block factor 4.
+INFO: [XFORM 203-101] Partitioning array 'features' (BoostingTree/BoostingTree.cpp:21) in dimension 1 completely.
+Command         transform done; 0.758 sec.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.o.1.tmp.bc -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
-INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4[16 x [196 x i1]]P.i32.i64.i64' into 'predict_ensemble' (BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:32).
-INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4[16 x [196 x i4]]P.i32.i64.i64' into 'predict_ensemble' (BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:32).
-INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4[16 x [196 x float]]P.i32.i64.i64' into 'predict_ensemble' (BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:32).
-Command         transform done; 0.454 sec.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:14 ; elapsed = 00:01:13 . Memory (MB): peak = 449.398 ; gain = 358.312
+Command         transform done; 0.429 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:01:03 . Memory (MB): peak = 259.934 ; gain = 168.816
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.o.2.bc -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Tree_Tranversal' (BoostingTree/BoostingTree.cpp:27:48) in function 'predict_ensemble' : 
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Tree_Tranversal' (BoostingTree/BoostingTree.cpp:32:48) in function 'predict_ensemble' : 
 
 the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
-Command         transform done; 0.489 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:14 ; elapsed = 00:01:14 . Memory (MB): peak = 449.398 ; gain = 358.312
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Tree_Tranversal2' (BoostingTree/BoostingTree.cpp:51:49) in function 'predict_ensemble' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+Command         transform done; 0.746 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:01:04 . Memory (MB): peak = 272.691 ; gain = 181.574
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 15.656 sec.
-Command     elaborate done; 72.008 sec.
+Command       opt_and_import_c done; 4.983 sec.
+Command     elaborate done; 61.459 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -255,26 +282,32 @@ Execute       set_default_model predict_ensemble
 Execute       schedule -model predict_ensemble 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'LOOP_TREE_DEPTH'.
-WARNING: [SCHED 204-64] Unable to schedule the loop exit test ('select' operation ('node.is_leaf', aesl_mux_load.4[16 x [196 x i1]]P.i32.i64.i64:13->BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:32)) in the first pipeline iteration (II = 1 cycles).
+WARNING: [SCHED 204-64] Unable to schedule the loop exit test ('mux' operation ('node1.is_leaf', BoostingTree/Tree_Param.hpp:6->BoostingTree/BoostingTree.cpp:38)) in the first pipeline iteration (II = 1 cycles).
 WARNING: [SCHED 204-68] The II Violation in module 'predict_ensemble' (Loop: LOOP_TREE_DEPTH): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
-   between 'fcmp' operation ('tmp_1', BoostingTree/BoostingTree.cpp:39) and 'load' operation ('LBoostTree_is_leaf_3_2', aesl_mux_load.4[16 x [196 x i1]]P.i32.i64.i64:11->BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:32) on array 'LBoostTree_is_leaf_3'.
+   between 'fcmp' operation ('tmp_12', BoostingTree/BoostingTree.cpp:46) and 'load' operation ('LBoostTree1_is_leaf_5', BoostingTree/Tree_Param.hpp:6->BoostingTree/BoostingTree.cpp:38) on array 'LBoostTree1_is_leaf_s'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 3, Depth = 4.
-WARNING: [SCHED 204-21] Estimated clock period (9.7626ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_TREE_DEPTH2'.
+WARNING: [SCHED 204-64] Unable to schedule the loop exit test ('mux' operation ('node.is_leaf', BoostingTree/Tree_Param.hpp:6->BoostingTree/BoostingTree.cpp:56)) in the first pipeline iteration (II = 1 cycles).
+WARNING: [SCHED 204-68] The II Violation in module 'predict_ensemble' (Loop: LOOP_TREE_DEPTH2): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'fcmp' operation ('tmp_15', BoostingTree/BoostingTree.cpp:63) and 'load' operation ('LBoostTree2_is_leaf_5', BoostingTree/Tree_Param.hpp:6->BoostingTree/BoostingTree.cpp:56) on array 'LBoostTree2_is_leaf_s'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 3, Depth = 4.
+WARNING: [SCHED 204-21] Estimated clock period (9.5781ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
 WARNING: [SCHED 204-21] The critical path in module 'predict_ensemble' consists of the following:
-	'fcmp' operation ('tmp_1', BoostingTree/BoostingTree.cpp:39) [213]  (4.2 ns)
-	'and' operation ('and_ln39_1', BoostingTree/BoostingTree.cpp:39) [214]  (0.8 ns)
-	'select' operation ('select_ln39', BoostingTree/BoostingTree.cpp:39) [215]  (0.448 ns)
-	'phi' operation ('curren_0', BoostingTree/BoostingTree.cpp:39) with incoming values : ('select_ln39', BoostingTree/BoostingTree.cpp:39) [119]  (0 ns)
-	'add' operation ('add_ln1', aesl_mux_load.4[16 x [196 x i4]]P.i32.i64.i64:1->BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:32) [130]  (1.55 ns)
-	'getelementptr' operation ('LBoostTree_feature_i_7', aesl_mux_load.4[16 x [196 x i4]]P.i32.i64.i64:10->BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:32) [135]  (0 ns)
-	'load' operation ('LBoostTree_feature_i_8', aesl_mux_load.4[16 x [196 x i4]]P.i32.i64.i64:11->BoostingTree/Tree_Param.hpp:5->BoostingTree/BoostingTree.cpp:32) on array 'LBoostTree_feature_i' [159]  (2.77 ns)
+	'fcmp' operation ('tmp_12', BoostingTree/BoostingTree.cpp:46) [190]  (4.2 ns)
+	'and' operation ('and_ln46_1', BoostingTree/BoostingTree.cpp:46) [191]  (0.8 ns)
+	'select' operation ('select_ln46', BoostingTree/BoostingTree.cpp:46) [192]  (0.448 ns)
+	'phi' operation ('current_addr1_0', BoostingTree/BoostingTree.cpp:46) with incoming values : ('select_ln46', BoostingTree/BoostingTree.cpp:46) [102]  (0 ns)
+	'add' operation ('add_ln321', BoostingTree/Tree_Param.hpp:6->BoostingTree/BoostingTree.cpp:38) [113]  (1.36 ns)
+	'getelementptr' operation ('LBoostTree1_feature_4', BoostingTree/Tree_Param.hpp:6->BoostingTree/BoostingTree.cpp:38) [115]  (0 ns)
+	'load' operation ('LBoostTree1_feature_8', BoostingTree/Tree_Param.hpp:6->BoostingTree/BoostingTree.cpp:38) on array 'LBoostTree1_feature_3' [140]  (2.77 ns)
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.149 sec.
-INFO: [HLS 200-111]  Elapsed time: 73.799 seconds; current allocated memory: 253.396 MB.
+Command       schedule done; 0.229 sec.
+INFO: [HLS 200-111]  Elapsed time: 64.504 seconds; current allocated memory: 208.922 MB.
 Execute       syn_report -verbosereport -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.verbose.sched.rpt 
-INFO: [HLS 200-434] Only 1 loops out of a total 3 loops have been pipelined in this design.
-Command       syn_report done; 0.121 sec.
+INFO: [HLS 200-434] Only 2 loops out of a total 5 loops have been pipelined in this design.
+Command       syn_report done; 0.206 sec.
 Execute       db_write -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.sched.adb -f 
+Command       db_write done; 0.138 sec.
 INFO-FLOW: Finish scheduling predict_ensemble.
 Execute       set_default_model predict_ensemble 
 Execute       bind -model predict_ensemble 
@@ -284,10 +317,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.336 seconds; current allocated memory: 254.389 MB.
+Command       bind done; 0.137 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.55 seconds; current allocated memory: 210.080 MB.
 Execute       syn_report -verbosereport -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.verbose.bind.rpt 
-Command       syn_report done; 0.171 sec.
+Command       syn_report done; 0.32 sec.
 Execute       db_write -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.bind.adb -f 
+Command       db_write done; 0.168 sec.
 INFO-FLOW: Finish binding predict_ensemble.
 Execute       get_model_list predict_ensemble -filter all-wo-channel 
 INFO-FLOW: Preprocessing for RTLGen ...
@@ -300,50 +335,79 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model predict_ensemble -vendor xilinx -mg_file E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.compgen.tcl 
 INFO: [RTGEN 206-500] Setting interface mode on port 'predict_ensemble/feature_stream_V' to 'axis' (register, both mode).
-INFO: [RTGEN 206-500] Setting interface mode on port 'predict_ensemble/prediction_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'predict_ensemble/prediction_sbp_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'predict_ensemble/prediction_dbp_V' to 'axis' (register, both mode).
 INFO: [RTGEN 206-500] Setting interface mode on function 'predict_ensemble' to 's_axilite & ap_ctrl_hs'.
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_3' to 'predict_ensemble_bkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_0' to 'predict_ensemble_cud' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_1' to 'predict_ensemble_dEe' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_is_leaf_2' to 'predict_ensemble_eOg' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i' to 'predict_ensemble_fYi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_3' to 'predict_ensemble_g8j' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_2' to 'predict_ensemble_hbi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_feature_i_1' to 'predict_ensemble_ibs' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_3' to 'predict_ensemble_jbC' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_0' to 'predict_ensemble_kbM' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_1' to 'predict_ensemble_lbW' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_value_2' to 'predict_ensemble_mb6' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_3' to 'predict_ensemble_ncg' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_2' to 'predict_ensemble_ocq' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil_1' to 'predict_ensemble_pcA' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_left_chil' to 'predict_ensemble_qcK' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_3' to 'predict_ensemble_rcU' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_2' to 'predict_ensemble_sc4' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi_1' to 'predict_ensemble_tde' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree_right_chi' to 'predict_ensemble_udo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_is_leaf_s' to 'predict_ensemble_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_is_leaf_1' to 'predict_ensemble_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_is_leaf_2' to 'predict_ensemble_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_is_leaf_3' to 'predict_ensemble_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_feature_3' to 'predict_ensemble_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_feature_2' to 'predict_ensemble_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_feature_1' to 'predict_ensemble_hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_feature_s' to 'predict_ensemble_ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_value_0' to 'predict_ensemble_jbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_value_1' to 'predict_ensemble_kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_value_2' to 'predict_ensemble_lbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_value_3' to 'predict_ensemble_mb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_left_chi_3' to 'predict_ensemble_ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_left_chi_2' to 'predict_ensemble_ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_left_chi_1' to 'predict_ensemble_pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_left_chi' to 'predict_ensemble_qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_right_ch_3' to 'predict_ensemble_rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_right_ch_2' to 'predict_ensemble_sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_right_ch_1' to 'predict_ensemble_tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree1_right_ch' to 'predict_ensemble_udo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_is_leaf_s' to 'predict_ensemble_vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_is_leaf_1' to 'predict_ensemble_wdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_is_leaf_2' to 'predict_ensemble_xdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_is_leaf_3' to 'predict_ensemble_yd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_feature_3' to 'predict_ensemble_zec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_feature_2' to 'predict_ensemble_Aem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_feature_1' to 'predict_ensemble_Bew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_feature_s' to 'predict_ensemble_CeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_value_0' to 'predict_ensemble_DeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_value_1' to 'predict_ensemble_Ee0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_value_2' to 'predict_ensemble_Ffa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_value_3' to 'predict_ensemble_Gfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_left_chi_3' to 'predict_ensemble_Hfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_left_chi_2' to 'predict_ensemble_IfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_left_chi_1' to 'predict_ensemble_JfO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_left_chi' to 'predict_ensemble_KfY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_right_ch_3' to 'predict_ensemble_Lf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_right_ch_2' to 'predict_ensemble_Mgi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_right_ch_1' to 'predict_ensemble_Ngs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_LBoostTree2_right_ch' to 'predict_ensemble_OgC' due to the length limit 20
 INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port CTRL_BUS.
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fadd_32ns_32ns_32_4_full_dsp_1' to 'predict_ensemble_vdy' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fcmp_32ns_32ns_1_2_1' to 'predict_ensemble_wdI' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_mux_432_8_1_1' to 'predict_ensemble_xdS' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'predict_ensemble_mux_134_32_1_1' to 'predict_ensemble_yd2' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_vdy': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_wdI': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_xdS': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_yd2': 1 instance(s).
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fadd_32ns_32ns_32_4_full_dsp_1' to 'predict_ensemble_PgM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_fcmp_32ns_32ns_1_2_1' to 'predict_ensemble_QgW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_mux_432_3_1_1' to 'predict_ensemble_Rg6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_mux_432_32_1_1' to 'predict_ensemble_Shg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_mux_432_1_1_1' to 'predict_ensemble_Thq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_mux_432_8_1_1' to 'predict_ensemble_UhA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predict_ensemble_mux_42_32_1_1' to 'predict_ensemble_VhK' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_PgM': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_QgW': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_Rg6': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_Shg': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_Thq': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_UhA': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predict_ensemble_VhK': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'predict_ensemble'.
-Command       create_rtl_model done; 0.244 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.607 seconds; current allocated memory: 256.041 MB.
+Command       create_rtl_model done; 0.799 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.365 seconds; current allocated memory: 212.635 MB.
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.rtl_wrap.cfg.tcl 
 Execute       gen_rtl predict_ensemble -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o E:/SEU/Graduation_Prj/BoostingTree/solution1/syn/systemc/predict_ensemble -synmodules predict_ensemble 
 Execute       gen_rtl predict_ensemble -istop -style xilinx -f -lang vhdl -o E:/SEU/Graduation_Prj/BoostingTree/solution1/syn/vhdl/predict_ensemble 
+Command       gen_rtl done; 0.108 sec.
 Execute       gen_rtl predict_ensemble -istop -style xilinx -f -lang vlog -o E:/SEU/Graduation_Prj/BoostingTree/solution1/syn/verilog/predict_ensemble 
 Execute       syn_report -csynth -model predict_ensemble -o E:/SEU/Graduation_Prj/BoostingTree/solution1/syn/report/predict_ensemble_csynth.rpt 
 Execute       syn_report -rtlxml -model predict_ensemble -o E:/SEU/Graduation_Prj/BoostingTree/solution1/syn/report/predict_ensemble_csynth.xml 
+Command       syn_report done; 0.101 sec.
 Execute       syn_report -verbosereport -model predict_ensemble -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.verbose.rpt 
-Command       syn_report done; 0.178 sec.
+Command       syn_report done; 0.44 sec.
 Execute       db_write -model predict_ensemble -f -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.adb 
-Command       db_write done; 0.132 sec.
+Command       db_write done; 0.324 sec.
 Execute       gen_tb_info predict_ensemble -p E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble 
 Execute       export_constraint_db -f -tool general -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.constraint.tcl 
 Execute       syn_report -designview -model predict_ensemble -o E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.design.xml 
@@ -357,14 +421,20 @@ Execute       sc_get_portdomain predict_ensemble
 INFO-FLOW: Model list for RTL component generation: predict_ensemble
 INFO-FLOW: Handling components in module [predict_ensemble] ... 
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.compgen.tcl 
-INFO-FLOW: Found component predict_ensemble_vdy.
-INFO-FLOW: Append model predict_ensemble_vdy
-INFO-FLOW: Found component predict_ensemble_wdI.
-INFO-FLOW: Append model predict_ensemble_wdI
-INFO-FLOW: Found component predict_ensemble_xdS.
-INFO-FLOW: Append model predict_ensemble_xdS
-INFO-FLOW: Found component predict_ensemble_yd2.
-INFO-FLOW: Append model predict_ensemble_yd2
+INFO-FLOW: Found component predict_ensemble_PgM.
+INFO-FLOW: Append model predict_ensemble_PgM
+INFO-FLOW: Found component predict_ensemble_QgW.
+INFO-FLOW: Append model predict_ensemble_QgW
+INFO-FLOW: Found component predict_ensemble_Rg6.
+INFO-FLOW: Append model predict_ensemble_Rg6
+INFO-FLOW: Found component predict_ensemble_Shg.
+INFO-FLOW: Append model predict_ensemble_Shg
+INFO-FLOW: Found component predict_ensemble_Thq.
+INFO-FLOW: Append model predict_ensemble_Thq
+INFO-FLOW: Found component predict_ensemble_UhA.
+INFO-FLOW: Append model predict_ensemble_UhA
+INFO-FLOW: Found component predict_ensemble_VhK.
+INFO-FLOW: Append model predict_ensemble_VhK
 INFO-FLOW: Found component predict_ensemble_bkb.
 INFO-FLOW: Append model predict_ensemble_bkb
 INFO-FLOW: Found component predict_ensemble_cud.
@@ -405,15 +475,58 @@ INFO-FLOW: Found component predict_ensemble_tde.
 INFO-FLOW: Append model predict_ensemble_tde
 INFO-FLOW: Found component predict_ensemble_udo.
 INFO-FLOW: Append model predict_ensemble_udo
+INFO-FLOW: Found component predict_ensemble_vdy.
+INFO-FLOW: Append model predict_ensemble_vdy
+INFO-FLOW: Found component predict_ensemble_wdI.
+INFO-FLOW: Append model predict_ensemble_wdI
+INFO-FLOW: Found component predict_ensemble_xdS.
+INFO-FLOW: Append model predict_ensemble_xdS
+INFO-FLOW: Found component predict_ensemble_yd2.
+INFO-FLOW: Append model predict_ensemble_yd2
+INFO-FLOW: Found component predict_ensemble_zec.
+INFO-FLOW: Append model predict_ensemble_zec
+INFO-FLOW: Found component predict_ensemble_Aem.
+INFO-FLOW: Append model predict_ensemble_Aem
+INFO-FLOW: Found component predict_ensemble_Bew.
+INFO-FLOW: Append model predict_ensemble_Bew
+INFO-FLOW: Found component predict_ensemble_CeG.
+INFO-FLOW: Append model predict_ensemble_CeG
+INFO-FLOW: Found component predict_ensemble_DeQ.
+INFO-FLOW: Append model predict_ensemble_DeQ
+INFO-FLOW: Found component predict_ensemble_Ee0.
+INFO-FLOW: Append model predict_ensemble_Ee0
+INFO-FLOW: Found component predict_ensemble_Ffa.
+INFO-FLOW: Append model predict_ensemble_Ffa
+INFO-FLOW: Found component predict_ensemble_Gfk.
+INFO-FLOW: Append model predict_ensemble_Gfk
+INFO-FLOW: Found component predict_ensemble_Hfu.
+INFO-FLOW: Append model predict_ensemble_Hfu
+INFO-FLOW: Found component predict_ensemble_IfE.
+INFO-FLOW: Append model predict_ensemble_IfE
+INFO-FLOW: Found component predict_ensemble_JfO.
+INFO-FLOW: Append model predict_ensemble_JfO
+INFO-FLOW: Found component predict_ensemble_KfY.
+INFO-FLOW: Append model predict_ensemble_KfY
+INFO-FLOW: Found component predict_ensemble_Lf8.
+INFO-FLOW: Append model predict_ensemble_Lf8
+INFO-FLOW: Found component predict_ensemble_Mgi.
+INFO-FLOW: Append model predict_ensemble_Mgi
+INFO-FLOW: Found component predict_ensemble_Ngs.
+INFO-FLOW: Append model predict_ensemble_Ngs
+INFO-FLOW: Found component predict_ensemble_OgC.
+INFO-FLOW: Append model predict_ensemble_OgC
 INFO-FLOW: Found component predict_ensemble_CTRL_BUS_s_axi.
 INFO-FLOW: Append model predict_ensemble_CTRL_BUS_s_axi
 INFO-FLOW: Append model predict_ensemble
 INFO-FLOW: Generating RTL model list ...
-INFO-FLOW: All models in this session: predict_ensemble_vdy predict_ensemble_wdI predict_ensemble_xdS predict_ensemble_yd2 predict_ensemble_bkb predict_ensemble_cud predict_ensemble_dEe predict_ensemble_eOg predict_ensemble_fYi predict_ensemble_g8j predict_ensemble_hbi predict_ensemble_ibs predict_ensemble_jbC predict_ensemble_kbM predict_ensemble_lbW predict_ensemble_mb6 predict_ensemble_ncg predict_ensemble_ocq predict_ensemble_pcA predict_ensemble_qcK predict_ensemble_rcU predict_ensemble_sc4 predict_ensemble_tde predict_ensemble_udo predict_ensemble_CTRL_BUS_s_axi predict_ensemble
-INFO-FLOW: To file: write model predict_ensemble_vdy
-INFO-FLOW: To file: write model predict_ensemble_wdI
-INFO-FLOW: To file: write model predict_ensemble_xdS
-INFO-FLOW: To file: write model predict_ensemble_yd2
+INFO-FLOW: All models in this session: predict_ensemble_PgM predict_ensemble_QgW predict_ensemble_Rg6 predict_ensemble_Shg predict_ensemble_Thq predict_ensemble_UhA predict_ensemble_VhK predict_ensemble_bkb predict_ensemble_cud predict_ensemble_dEe predict_ensemble_eOg predict_ensemble_fYi predict_ensemble_g8j predict_ensemble_hbi predict_ensemble_ibs predict_ensemble_jbC predict_ensemble_kbM predict_ensemble_lbW predict_ensemble_mb6 predict_ensemble_ncg predict_ensemble_ocq predict_ensemble_pcA predict_ensemble_qcK predict_ensemble_rcU predict_ensemble_sc4 predict_ensemble_tde predict_ensemble_udo predict_ensemble_vdy predict_ensemble_wdI predict_ensemble_xdS predict_ensemble_yd2 predict_ensemble_zec predict_ensemble_Aem predict_ensemble_Bew predict_ensemble_CeG predict_ensemble_DeQ predict_ensemble_Ee0 predict_ensemble_Ffa predict_ensemble_Gfk predict_ensemble_Hfu predict_ensemble_IfE predict_ensemble_JfO predict_ensemble_KfY predict_ensemble_Lf8 predict_ensemble_Mgi predict_ensemble_Ngs predict_ensemble_OgC predict_ensemble_CTRL_BUS_s_axi predict_ensemble
+INFO-FLOW: To file: write model predict_ensemble_PgM
+INFO-FLOW: To file: write model predict_ensemble_QgW
+INFO-FLOW: To file: write model predict_ensemble_Rg6
+INFO-FLOW: To file: write model predict_ensemble_Shg
+INFO-FLOW: To file: write model predict_ensemble_Thq
+INFO-FLOW: To file: write model predict_ensemble_UhA
+INFO-FLOW: To file: write model predict_ensemble_VhK
 INFO-FLOW: To file: write model predict_ensemble_bkb
 INFO-FLOW: To file: write model predict_ensemble_cud
 INFO-FLOW: To file: write model predict_ensemble_dEe
@@ -434,6 +547,26 @@ INFO-FLOW: To file: write model predict_ensemble_rcU
 INFO-FLOW: To file: write model predict_ensemble_sc4
 INFO-FLOW: To file: write model predict_ensemble_tde
 INFO-FLOW: To file: write model predict_ensemble_udo
+INFO-FLOW: To file: write model predict_ensemble_vdy
+INFO-FLOW: To file: write model predict_ensemble_wdI
+INFO-FLOW: To file: write model predict_ensemble_xdS
+INFO-FLOW: To file: write model predict_ensemble_yd2
+INFO-FLOW: To file: write model predict_ensemble_zec
+INFO-FLOW: To file: write model predict_ensemble_Aem
+INFO-FLOW: To file: write model predict_ensemble_Bew
+INFO-FLOW: To file: write model predict_ensemble_CeG
+INFO-FLOW: To file: write model predict_ensemble_DeQ
+INFO-FLOW: To file: write model predict_ensemble_Ee0
+INFO-FLOW: To file: write model predict_ensemble_Ffa
+INFO-FLOW: To file: write model predict_ensemble_Gfk
+INFO-FLOW: To file: write model predict_ensemble_Hfu
+INFO-FLOW: To file: write model predict_ensemble_IfE
+INFO-FLOW: To file: write model predict_ensemble_JfO
+INFO-FLOW: To file: write model predict_ensemble_KfY
+INFO-FLOW: To file: write model predict_ensemble_Lf8
+INFO-FLOW: To file: write model predict_ensemble_Mgi
+INFO-FLOW: To file: write model predict_ensemble_Ngs
+INFO-FLOW: To file: write model predict_ensemble_OgC
 INFO-FLOW: To file: write model predict_ensemble_CTRL_BUS_s_axi
 INFO-FLOW: To file: write model predict_ensemble
 INFO-FLOW: Finished generating RTL model list.
@@ -465,11 +598,11 @@ Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interf
 Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
 Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
 Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
-Command           ap_source done; 0.105 sec.
+Command           ap_source done; 0.234 sec.
 Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
 Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
-Command         ap_source done; 0.17 sec.
-Command       ap_source done; 0.171 sec.
+Command         ap_source done; 0.352 sec.
+Command       ap_source done; 0.353 sec.
 Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
@@ -490,28 +623,34 @@ Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
-INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_bkb_rom' using auto ROMs.
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
-INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_cud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_bkb_rom' using distributed ROMs.
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
-INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_dEe_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_cud_rom' using distributed ROMs.
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
-INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_eOg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_dEe_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_eOg_rom' using distributed ROMs.
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
@@ -628,9 +767,149 @@ Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_vdy_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_wdI_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_xdS_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_yd2_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_zec_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_Aem_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_Bew_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_CeG_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_DeQ_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_Ee0_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_Ffa_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_Gfk_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_Hfu_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_IfE_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_JfO_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_KfY_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_Lf8_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_Mgi_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_Ngs_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'predict_ensemble_OgC_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute         source ./CTRL_BUS.slave.tcl 
 Execute         is_m_axi_addr64 
-Command       ap_source done; 3.709 sec.
+Command       ap_source done; 3.324 sec.
 INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d E:/SEU/Graduation_Prj/BoostingTree/solution1
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/global.setting.tcl 
 INFO-FLOW: DBG:CMD: read_platform_lib E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/global.setting.tcl
@@ -653,10 +932,11 @@ Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interf
 Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
 Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
 Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.154 sec.
 Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
 Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
-Command         ap_source done; 0.125 sec.
-Command       ap_source done; 0.125 sec.
+Command         ap_source done; 0.222 sec.
+Command       ap_source done; 0.224 sec.
 Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=predict_ensemble xml_exists=0
@@ -702,9 +982,9 @@ Execute       ap_part_info -name xc7z020-clg400-2 -data names -quiet
 Execute       ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.constraint.tcl 
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=4
-INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=2
-INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=1 #modelList=26 #gSsdmPorts=4
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=6
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=3
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=1 #modelList=49 #gSsdmPorts=6
 Execute       source F:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/global.setting.tcl 
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/global.setting.tcl 
@@ -712,6 +992,7 @@ Execute       get_config_export -xo
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.tbgen.tcl 
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.compgen.dataonly.tcl 
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.compgen.dataonly.tcl 
+Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.tbgen.tcl 
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.tbgen.tcl 
 Execute       source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/global.setting.tcl 
 Execute       get_config_sdx -target 
@@ -736,14 +1017,14 @@ Execute       get_config_rtl -stall_sig_gen
 Execute       get_config_rtl -profile 
 INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/kernel.internal.xml
 INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:19 ; elapsed = 00:01:20 . Memory (MB): peak = 449.398 ; gain = 358.312
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:13 ; elapsed = 00:01:14 . Memory (MB): peak = 289.113 ; gain = 197.996
 INFO: [VHDL 208-304] Generating VHDL RTL for predict_ensemble.
 INFO: [VLOG 209-307] Generating Verilog RTL for predict_ensemble.
-Command     autosyn done; 6.721 sec.
-Command   csynth_design done; 78.735 sec.
-Command ap_source done; 79.876 sec.
+Command     autosyn done; 9.745 sec.
+Command   csynth_design done; 71.213 sec.
+Command ap_source done; 73.223 sec.
 Execute cleanup_all 
-INFO-FLOW: Workspace E:/SEU/Graduation_Prj/BoostingTree/solution1 opened at Wed Mar 12 15:25:26 +0800 2025
+INFO-FLOW: Workspace E:/SEU/Graduation_Prj/BoostingTree/solution1 opened at Wed Mar 26 20:12:27 +0800 2025
 Execute     config_clock -quiet -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     open_platform DefaultPlatform 
@@ -785,26 +1066,15 @@ Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interfac
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.124 sec.
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.117 sec.
-Command     ap_source done; 0.117 sec.
-Execute     open_platform DefaultPlatform 
-Execute     import_lib F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
-Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
-Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
-Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
-Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
-Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
-Execute             source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
-Execute             source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
-Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
-Execute     source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
-Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
-Execute     set_part xc7z020-clg400-2 
-Execute       ap_part_info -name xc7z020-clg400-2 -data single -quiet 
-Command       ap_part_info done; 0.642 sec.
-Execute       ap_part_info -name xc7z020-clg400-2 -data info 
+Command       ap_source done; 0.185 sec.
+Command     ap_source done; 0.186 sec.
+Execute     set_part xc7z020clg400-2 
+Execute       ap_part_info -name xc7z020clg400-2 -data single -quiet 
+Command       ap_part_info done; 0.929 sec.
+Execute       ap_part_info -name xc7z020clg400-2 -data info 
 Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-2 
 Execute         get_default_platform 
 Execute         license_isbetapart xc7z020 
@@ -818,22 +1088,31 @@ Execute         ap_part_info -name xc7z020-clg400-2 -data info
 Execute         config_chip_info -quiet -speed medium 
 Execute       add_library xilinx/zynq/zynq_fpv6 
 Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute             source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute               source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute               source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute           source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-2'
 Execute       ap_part_info -name xc7z020-clg400-2 -data info 
 Execute       get_default_platform 
-Command     set_part done; 0.754 sec.
-Execute     ap_part_info -data single -name xc7z020-clg400-2 
-Execute     ap_part_info -name xc7z020-clg400-2 -data resources 
-Execute     ap_part_info -name xc7z020-clg400-2 -data info 
-Execute     ap_part_info -name xc7z020-clg400-2 -data info 
+Command     set_part done; 1.108 sec.
+Execute     ap_part_info -data single -name xc7z020clg400-2 
+Execute     ap_part_info -name xc7z020clg400-2 -data resources 
+Execute     ap_part_info -name xc7z020clg400-2 -data info 
+Execute     ap_part_info -name xc7z020clg400-2 -data info 
 Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
-Execute     ap_part_info -name xc7z020-clg400-2 -data info 
+Execute     ap_part_info -name xc7z020clg400-2 -data info 
 Execute     config_chip_info -quiet -speed medium 
-Execute     config_export -description=float_predict_ensemble 
-Execute     config_export -format=ip_catalog 
-Execute     config_export -rtl=verilog 
-Command   open_solution done; 0.941 sec.
-Execute   export_design -rtl verilog -format ip_catalog -description float_predict_ensemble 
+Command   open_solution done; 1.363 sec.
+Execute   export_design -rtl verilog -format ip_catalog -description predict_sbp&dbp 
 Execute     get_config_export -acc 
 Execute     get_config_export -clock_margin 
 Execute     get_config_export -custom_script 
@@ -851,8 +1130,8 @@ Execute     get_config_export -use_netlist
 Execute     get_config_export -vendor 
 Execute     get_config_export -version 
 Execute     get_config_export -xo 
-Execute     config_export -description=float_predict_ensemble -format=ip_catalog -rtl=verilog 
-INFO-FLOW: DBG:CMD: export_design_wrap: -format ip_catalog -rtl verilog -description float_predict_ensemble
+Execute     config_export -description=predict_sbp&dbp -format=ip_catalog -rtl=verilog 
+INFO-FLOW: DBG:CMD: export_design_wrap: -format ip_catalog -rtl verilog -description predict_sbp&dbp
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/global.setting.tcl 
 Execute     get_config_export -vivado_clock 
 Execute     get_top 
@@ -884,8 +1163,8 @@ Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.126 sec.
-Command     ap_source done; 0.126 sec.
+Command       ap_source done; 0.157 sec.
+Command     ap_source done; 0.158 sec.
 Execute     source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
@@ -917,10 +1196,11 @@ Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interfac
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.12 sec.
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.117 sec.
-Command     ap_source done; 0.117 sec.
+Command       ap_source done; 0.183 sec.
+Command     ap_source done; 0.183 sec.
 Execute     source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=predict_ensemble xml_exists=1
@@ -966,9 +1246,9 @@ Execute     ap_part_info -name xc7z020-clg400-2 -data names -quiet
 Execute     ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.constraint.tcl 
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.tbgen.tcl 
-INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=4
-INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=2
-INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=0 g_has_adaptors=false generate_bd_files=1 #modelList=26 #gSsdmPorts=4
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=6
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=3
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=0 g_has_adaptors=false generate_bd_files=1 #modelList=49 #gSsdmPorts=6
 Execute     source F:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
 Execute       source F:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
 Execute     source F:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
@@ -980,6 +1260,7 @@ Execute     get_config_export -xo
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.tbgen.tcl 
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.compgen.dataonly.tcl 
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.compgen.dataonly.tcl 
+Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.tbgen.tcl 
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.tbgen.tcl 
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/global.setting.tcl 
 Execute     get_config_sdx -target 
@@ -1006,13 +1287,14 @@ INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping openc
 INFO-FLOW: DBG:CMD:       copying IP vlog from E:/SEU/Graduation_Prj/BoostingTree/solution1/impl/verilog
 INFO-FLOW: DBG:CMD:       copying IP vhdl from E:/SEU/Graduation_Prj/BoostingTree/solution1/impl/vhdl
 INFO-FLOW: DBG:CMD:       copy ip_driver_dir 1_0 E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/driver
-INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=4
+INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=6
 Execute     ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute     ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute     ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute     ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.compgen.dataonly.tcl 
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.compgen.dataonly.tcl 
+Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.tbgen.tcl 
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/predict_ensemble.tbgen.tcl 
 Execute     source E:/SEU/Graduation_Prj/BoostingTree/solution1/.autopilot/db/global.setting.tcl 
 Execute     get_config_sdx -target 
@@ -1085,15 +1367,16 @@ Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/interfac
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.128 sec.
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
 Execute         source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.123 sec.
-Command     ap_source done; 0.123 sec.
+Command       ap_source done; 0.193 sec.
+Command     ap_source done; 0.193 sec.
 Execute     source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute       source F:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 Execute     ap_part_info -name xc7z020-clg400-2 -data names -quiet 
 Execute     ap_part_info -name xc7z020-clg400-2 -data info -quiet 
 INFO-FLOW: DBG:CMD:     exec E:/SEU/Graduation_Prj/BoostingTree/solution1/impl/ip/pack.bat
-Command   export_design done; 16.729 sec.
-Command ap_source done; 17.672 sec.
+Command   export_design done; 26.536 sec.
+Command ap_source done; 27.904 sec.
 Execute cleanup_all 

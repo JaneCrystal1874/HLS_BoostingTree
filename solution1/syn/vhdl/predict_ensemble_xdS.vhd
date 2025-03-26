@@ -2,200 +2,123 @@
 -- Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- ==============================================================
+library ieee; 
+use ieee.std_logic_1164.all; 
+use ieee.std_logic_unsigned.all;
 
-library IEEE;
+entity predict_ensemble_xdS_rom is 
+    generic(
+             DWIDTH     : integer := 1; 
+             AWIDTH     : integer := 9; 
+             MEM_SIZE    : integer := 512
+    ); 
+    port (
+          addr0      : in std_logic_vector(AWIDTH-1 downto 0); 
+          ce0       : in std_logic; 
+          q0         : out std_logic_vector(DWIDTH-1 downto 0);
+          clk       : in std_logic
+    ); 
+end entity; 
+
+
+architecture rtl of predict_ensemble_xdS_rom is 
+
+signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
+type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
+signal mem : mem_array := (
+    0 to 2=> "0", 3 to 4=> "1", 5 => "0", 6 => "1", 7 to 10=> "0", 11 => "1", 12 to 15=> "0", 
+    16 => "1", 17 to 18=> "0", 19 to 27=> "1", 28 => "0", 29 to 30=> "1", 31 to 39=> "0", 40 => "1", 
+    41 to 43=> "0", 44 => "1", 45 to 46=> "0", 47 => "1", 48 => "0", 49 to 55=> "1", 56 => "0", 
+    57 to 62=> "1", 63 to 67=> "0", 68 => "1", 69 to 72=> "0", 73 => "1", 74 => "0", 75 to 76=> "1", 
+    77 => "0", 78 to 79=> "1", 80 => "0", 81 to 82=> "1", 83 to 84=> "0", 85 => "1", 86 to 87=> "0", 
+    88 to 94=> "1", 95 to 100=> "0", 101 to 102=> "1", 103 to 105=> "0", 106 => "1", 107 to 108=> "0", 109 to 110=> "1", 
+    111 => "0", 112 => "1", 113 to 115=> "0", 116 to 118=> "1", 119 => "0", 120 to 126=> "1", 127 to 136=> "0", 
+    137 => "1", 138 to 139=> "0", 140 => "1", 141 => "0", 142 to 146=> "1", 147 to 148=> "0", 149 to 151=> "1", 
+    152 => "0", 153 to 158=> "1", 159 to 164=> "0", 165 => "1", 166 to 170=> "0", 171 => "1", 172 => "0", 
+    173 => "1", 174 to 176=> "0", 177 to 178=> "1", 179 => "0", 180 to 190=> "1", 191 to 199=> "0", 200 to 201=> "1", 
+    202 to 203=> "0", 204 to 205=> "1", 206 => "0", 207 => "1", 208 => "0", 209 to 210=> "1", 211 => "0", 
+    212 => "1", 213 to 214=> "0", 215 to 222=> "1", 223 to 228=> "0", 229 => "1", 230 to 233=> "0", 234 => "1", 
+    235 to 236=> "0", 237 to 239=> "1", 240 to 241=> "0", 242 => "1", 243 to 244=> "0", 245 to 254=> "1", 255 to 257=> "0", 
+    258 => "1", 259 to 263=> "0", 264 => "1", 265 => "0", 266 to 267=> "1", 268 to 269=> "0", 270 to 272=> "1", 
+    273 to 276=> "0", 277 to 279=> "1", 280 => "0", 281 to 286=> "1", 287 to 295=> "0", 296 to 298=> "1", 299 to 302=> "0", 
+    303 to 304=> "1", 305 to 306=> "0", 307 to 310=> "1", 311 => "0", 312 to 318=> "1", 319 to 321=> "0", 322 => "1", 
+    323 to 326=> "0", 327 => "1", 328 to 330=> "0", 331 => "1", 332 to 335=> "0", 336 to 337=> "1", 338 => "0", 
+    339 to 344=> "1", 345 => "0", 346 to 350=> "1", 351 to 355=> "0", 356 => "1", 357 to 359=> "0", 360 => "1", 
+    361 to 362=> "0", 363 => "1", 364 to 365=> "0", 366 => "1", 367 => "0", 368 => "1", 369 => "0", 
+    370 => "1", 371 to 372=> "0", 373 to 382=> "1", 383 to 388=> "0", 389 => "1", 390 to 392=> "0", 393 => "1", 
+    394 => "0", 395 => "1", 396 => "0", 397 => "1", 398 to 401=> "0", 402 => "1", 403 => "0", 
+    404 to 414=> "1", 415 to 425=> "0", 426 => "1", 427 to 428=> "0", 429 => "1", 430 => "0", 431 to 432=> "1", 
+    433 => "0", 434 to 441=> "1", 442 => "0", 443 to 446=> "1", 447 to 451=> "0", 452 => "1", 453 to 456=> "0", 
+    457 to 458=> "1", 459 to 461=> "0", 462 => "1", 463 => "0", 464 to 465=> "1", 466 to 468=> "0", 469 to 478=> "1", 
+    479 to 482=> "0", 483 => "1", 484 to 487=> "0", 488 => "1", 489 to 492=> "0", 493 to 494=> "1", 495 to 497=> "0", 
+    498 => "1", 499 => "0", 500 to 510=> "1", 511 => "0" );
+
+attribute syn_rom_style : string;
+attribute syn_rom_style of mem : signal is "select_rom";
+attribute ROM_STYLE : string;
+attribute ROM_STYLE of mem : signal is "distributed";
+
+begin 
+
+
+memory_access_guard_0: process (addr0) 
+begin
+      addr0_tmp <= addr0;
+--synthesis translate_off
+      if (CONV_INTEGER(addr0) > mem_size-1) then
+           addr0_tmp <= (others => '0');
+      else 
+           addr0_tmp <= addr0;
+      end if;
+--synthesis translate_on
+end process;
+
+p_rom_access: process (clk)  
+begin 
+    if (clk'event and clk = '1') then
+        if (ce0 = '1') then 
+            q0 <= mem(CONV_INTEGER(addr0_tmp)); 
+        end if;
+    end if;
+end process;
+
+end rtl;
+
+Library IEEE;
 use IEEE.std_logic_1164.all;
-use IEEE.NUMERIC_STD.all;
 
 entity predict_ensemble_xdS is
-generic (
-    ID            :integer := 0;
-    NUM_STAGE     :integer := 1;
-    din0_WIDTH       :integer := 32;
-    din1_WIDTH       :integer := 32;
-    din2_WIDTH       :integer := 32;
-    din3_WIDTH       :integer := 32;
-    din4_WIDTH       :integer := 32;
-    dout_WIDTH        :integer := 32);
-port (
-    din0   :in  std_logic_vector(7 downto 0);
-    din1   :in  std_logic_vector(7 downto 0);
-    din2   :in  std_logic_vector(7 downto 0);
-    din3   :in  std_logic_vector(7 downto 0);
-    din4   :in  std_logic_vector(31 downto 0);
-    dout     :out std_logic_vector(7 downto 0));
+    generic (
+        DataWidth : INTEGER := 1;
+        AddressRange : INTEGER := 512;
+        AddressWidth : INTEGER := 9);
+    port (
+        reset : IN STD_LOGIC;
+        clk : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR(AddressWidth - 1 DOWNTO 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR(DataWidth - 1 DOWNTO 0));
 end entity;
 
-architecture rtl of predict_ensemble_xdS is
-    -- puts internal signals
-    signal sel    : std_logic_vector(31 downto 0);
-    -- level 1 signals
-    signal mux_1_0    : std_logic_vector(7 downto 0);
-    signal mux_1_1    : std_logic_vector(7 downto 0);
-    -- level 2 signals
-    signal mux_2_0    : std_logic_vector(7 downto 0);
-    -- level 3 signals
-    signal mux_3_0    : std_logic_vector(7 downto 0);
-    -- level 4 signals
-    signal mux_4_0    : std_logic_vector(7 downto 0);
-    -- level 5 signals
-    signal mux_5_0    : std_logic_vector(7 downto 0);
-    -- level 6 signals
-    signal mux_6_0    : std_logic_vector(7 downto 0);
-    -- level 7 signals
-    signal mux_7_0    : std_logic_vector(7 downto 0);
-    -- level 8 signals
-    signal mux_8_0    : std_logic_vector(7 downto 0);
-    -- level 9 signals
-    signal mux_9_0    : std_logic_vector(7 downto 0);
-    -- level 10 signals
-    signal mux_10_0    : std_logic_vector(7 downto 0);
-    -- level 11 signals
-    signal mux_11_0    : std_logic_vector(7 downto 0);
-    -- level 12 signals
-    signal mux_12_0    : std_logic_vector(7 downto 0);
-    -- level 13 signals
-    signal mux_13_0    : std_logic_vector(7 downto 0);
-    -- level 14 signals
-    signal mux_14_0    : std_logic_vector(7 downto 0);
-    -- level 15 signals
-    signal mux_15_0    : std_logic_vector(7 downto 0);
-    -- level 16 signals
-    signal mux_16_0    : std_logic_vector(7 downto 0);
-    -- level 17 signals
-    signal mux_17_0    : std_logic_vector(7 downto 0);
-    -- level 18 signals
-    signal mux_18_0    : std_logic_vector(7 downto 0);
-    -- level 19 signals
-    signal mux_19_0    : std_logic_vector(7 downto 0);
-    -- level 20 signals
-    signal mux_20_0    : std_logic_vector(7 downto 0);
-    -- level 21 signals
-    signal mux_21_0    : std_logic_vector(7 downto 0);
-    -- level 22 signals
-    signal mux_22_0    : std_logic_vector(7 downto 0);
-    -- level 23 signals
-    signal mux_23_0    : std_logic_vector(7 downto 0);
-    -- level 24 signals
-    signal mux_24_0    : std_logic_vector(7 downto 0);
-    -- level 25 signals
-    signal mux_25_0    : std_logic_vector(7 downto 0);
-    -- level 26 signals
-    signal mux_26_0    : std_logic_vector(7 downto 0);
-    -- level 27 signals
-    signal mux_27_0    : std_logic_vector(7 downto 0);
-    -- level 28 signals
-    signal mux_28_0    : std_logic_vector(7 downto 0);
-    -- level 29 signals
-    signal mux_29_0    : std_logic_vector(7 downto 0);
-    -- level 30 signals
-    signal mux_30_0    : std_logic_vector(7 downto 0);
-    -- level 31 signals
-    signal mux_31_0    : std_logic_vector(7 downto 0);
-    -- level 32 signals
-    signal mux_32_0    : std_logic_vector(7 downto 0);
+architecture arch of predict_ensemble_xdS is
+    component predict_ensemble_xdS_rom is
+        port (
+            clk : IN STD_LOGIC;
+            addr0 : IN STD_LOGIC_VECTOR;
+            ce0 : IN STD_LOGIC;
+            q0 : OUT STD_LOGIC_VECTOR);
+    end component;
+
+
+
 begin
-
-sel <= din4;
-
--- Generate level 1 logic
-mux_1_0 <= din0 when sel(0) = '0' else din1;
-mux_1_1 <= din2 when sel(0) = '0' else din3;
-
--- Generate level 2 logic
-mux_2_0 <= mux_1_0 when sel(1) = '0' else mux_1_1;
-
--- Generate level 3 logic
-mux_3_0 <= mux_2_0;
-
--- Generate level 4 logic
-mux_4_0 <= mux_3_0;
-
--- Generate level 5 logic
-mux_5_0 <= mux_4_0;
-
--- Generate level 6 logic
-mux_6_0 <= mux_5_0;
-
--- Generate level 7 logic
-mux_7_0 <= mux_6_0;
-
--- Generate level 8 logic
-mux_8_0 <= mux_7_0;
-
--- Generate level 9 logic
-mux_9_0 <= mux_8_0;
-
--- Generate level 10 logic
-mux_10_0 <= mux_9_0;
-
--- Generate level 11 logic
-mux_11_0 <= mux_10_0;
-
--- Generate level 12 logic
-mux_12_0 <= mux_11_0;
-
--- Generate level 13 logic
-mux_13_0 <= mux_12_0;
-
--- Generate level 14 logic
-mux_14_0 <= mux_13_0;
-
--- Generate level 15 logic
-mux_15_0 <= mux_14_0;
-
--- Generate level 16 logic
-mux_16_0 <= mux_15_0;
-
--- Generate level 17 logic
-mux_17_0 <= mux_16_0;
-
--- Generate level 18 logic
-mux_18_0 <= mux_17_0;
-
--- Generate level 19 logic
-mux_19_0 <= mux_18_0;
-
--- Generate level 20 logic
-mux_20_0 <= mux_19_0;
-
--- Generate level 21 logic
-mux_21_0 <= mux_20_0;
-
--- Generate level 22 logic
-mux_22_0 <= mux_21_0;
-
--- Generate level 23 logic
-mux_23_0 <= mux_22_0;
-
--- Generate level 24 logic
-mux_24_0 <= mux_23_0;
-
--- Generate level 25 logic
-mux_25_0 <= mux_24_0;
-
--- Generate level 26 logic
-mux_26_0 <= mux_25_0;
-
--- Generate level 27 logic
-mux_27_0 <= mux_26_0;
-
--- Generate level 28 logic
-mux_28_0 <= mux_27_0;
-
--- Generate level 29 logic
-mux_29_0 <= mux_28_0;
-
--- Generate level 30 logic
-mux_30_0 <= mux_29_0;
-
--- Generate level 31 logic
-mux_31_0 <= mux_30_0;
-
--- Generate level 32 logic
-mux_32_0 <= mux_31_0;
-
--- output logic
-dout <= mux_32_0;
+    predict_ensemble_xdS_rom_U :  component predict_ensemble_xdS_rom
+    port map (
+        clk => clk,
+        addr0 => address0,
+        ce0 => ce0,
+        q0 => q0);
 
 end architecture;
+
+

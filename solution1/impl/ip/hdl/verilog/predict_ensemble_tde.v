@@ -6,9 +6,9 @@
 module predict_ensemble_tde_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 8;
-parameter AWIDTH = 12;
-parameter MEM_SIZE = 3136;
+parameter DWIDTH = 5;
+parameter AWIDTH = 9;
+parameter MEM_SIZE = 512;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -43,9 +43,9 @@ module predict_ensemble_tde(
     ce0,
     q0);
 
-parameter DataWidth = 32'd8;
-parameter AddressRange = 32'd3136;
-parameter AddressWidth = 32'd12;
+parameter DataWidth = 32'd5;
+parameter AddressRange = 32'd512;
+parameter AddressWidth = 32'd9;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

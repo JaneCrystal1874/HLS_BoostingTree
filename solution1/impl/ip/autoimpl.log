@@ -9,6 +9,7 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2019.1/data/ip'.
 WARNING: [IP_Flow 19-4832] The IP name 'predict_ensemble_ap_fadd_2_full_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 402.133 ; gain = 43.180
 INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'predict_ensemble_ap_fadd_2_full_dsp_32'...
 INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'predict_ensemble_ap_fadd_2_full_dsp_32'...
 WARNING: [IP_Flow 19-4832] The IP name 'predict_ensemble_ap_fcmp_0_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
@@ -17,4 +18,4 @@ INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'predict_ensemble_
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2019.1/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 12 15:25:43 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 26 20:12:54 2025...

@@ -1,10 +1,14 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../test_predict_ensemble.cpp in debug mode
+   Compiling ../../../BoostingTree.cpp in debug mode
    Generating csim.exe
 ===== TEST REPORT =====
-Predict result:94.586922
+Predict sbp:101.579445
 Expect result:95.000000
-Test passed!
+Test failed!
+===== TEST REPORT =====
+Predict dbp:84.801750
+Expect result:95.000000
+Test failed!
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="Tree_Param.hpp" path="E:\SEU\Graduation_Prj\BoostingTree\Tree_Param.hpp"/>
     <originFiles name="BoostingTree.cpp" path="E:\SEU\Graduation_Prj\BoostingTree\BoostingTree.cpp"/>
+    <originFiles name="Tree_Param.hpp" path="E:\SEU\Graduation_Prj\BoostingTree\Tree_Param.hpp"/>
   </source>
   <testbench>
     <originFiles name="test_predict_ensemble.cpp" path="E:\SEU\Graduation_Prj\BoostingTree\test_predict_ensemble.cpp"/>

@@ -2,91 +2,63 @@
 // Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
+`timescale 1 ns / 1 ps
+(* rom_style = "distributed" *) module predict_ensemble_yd2_rom (
+addr0, ce0, q0, clk);
 
-`timescale 1ns/1ps
+parameter DWIDTH = 1;
+parameter AWIDTH = 9;
+parameter MEM_SIZE = 512;
 
-module predict_ensemble_yd2 #(
-parameter
-    ID                = 0,
-    NUM_STAGE         = 1,
-    din0_WIDTH       = 32,
-    din1_WIDTH       = 32,
-    din2_WIDTH       = 32,
-    din3_WIDTH       = 32,
-    din4_WIDTH       = 32,
-    din5_WIDTH       = 32,
-    din6_WIDTH       = 32,
-    din7_WIDTH       = 32,
-    din8_WIDTH       = 32,
-    din9_WIDTH       = 32,
-    din10_WIDTH       = 32,
-    din11_WIDTH       = 32,
-    din12_WIDTH       = 32,
-    din13_WIDTH         = 32,
-    dout_WIDTH            = 32
-)(
-    input  [31 : 0]     din0,
-    input  [31 : 0]     din1,
-    input  [31 : 0]     din2,
-    input  [31 : 0]     din3,
-    input  [31 : 0]     din4,
-    input  [31 : 0]     din5,
-    input  [31 : 0]     din6,
-    input  [31 : 0]     din7,
-    input  [31 : 0]     din8,
-    input  [31 : 0]     din9,
-    input  [31 : 0]     din10,
-    input  [31 : 0]     din11,
-    input  [31 : 0]     din12,
-    input  [3 : 0]    din13,
-    output [31 : 0]   dout);
+input[AWIDTH-1:0] addr0;
+input ce0;
+output reg[DWIDTH-1:0] q0;
+input clk;
 
-// puts internal signals
-wire [3 : 0]     sel;
-// level 1 signals
-wire [31 : 0]         mux_1_0;
-wire [31 : 0]         mux_1_1;
-wire [31 : 0]         mux_1_2;
-wire [31 : 0]         mux_1_3;
-wire [31 : 0]         mux_1_4;
-wire [31 : 0]         mux_1_5;
-wire [31 : 0]         mux_1_6;
-// level 2 signals
-wire [31 : 0]         mux_2_0;
-wire [31 : 0]         mux_2_1;
-wire [31 : 0]         mux_2_2;
-wire [31 : 0]         mux_2_3;
-// level 3 signals
-wire [31 : 0]         mux_3_0;
-wire [31 : 0]         mux_3_1;
-// level 4 signals
-wire [31 : 0]         mux_4_0;
+(* ram_style = "distributed" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
 
-assign sel = din13;
+initial begin
+    $readmemh("./predict_ensemble_yd2_rom.dat", ram);
+end
 
-// Generate level 1 logic
-assign mux_1_0 = (sel[0] == 0)? din0 : din1;
-assign mux_1_1 = (sel[0] == 0)? din2 : din3;
-assign mux_1_2 = (sel[0] == 0)? din4 : din5;
-assign mux_1_3 = (sel[0] == 0)? din6 : din7;
-assign mux_1_4 = (sel[0] == 0)? din8 : din9;
-assign mux_1_5 = (sel[0] == 0)? din10 : din11;
-assign mux_1_6 = din12;
 
-// Generate level 2 logic
-assign mux_2_0 = (sel[1] == 0)? mux_1_0 : mux_1_1;
-assign mux_2_1 = (sel[1] == 0)? mux_1_2 : mux_1_3;
-assign mux_2_2 = (sel[1] == 0)? mux_1_4 : mux_1_5;
-assign mux_2_3 = mux_1_6;
 
-// Generate level 3 logic
-assign mux_3_0 = (sel[2] == 0)? mux_2_0 : mux_2_1;
-assign mux_3_1 = (sel[2] == 0)? mux_2_2 : mux_2_3;
+always @(posedge clk)  
+begin 
+    if (ce0) 
+    begin
+        q0 <= ram[addr0];
+    end
+end
 
-// Generate level 4 logic
-assign mux_4_0 = (sel[3] == 0)? mux_3_0 : mux_3_1;
 
-// output logic
-assign dout = mux_4_0;
 
 endmodule
+
+`timescale 1 ns / 1 ps
+module predict_ensemble_yd2(
+    reset,
+    clk,
+    address0,
+    ce0,
+    q0);
+
+parameter DataWidth = 32'd1;
+parameter AddressRange = 32'd512;
+parameter AddressWidth = 32'd9;
+input reset;
+input clk;
+input[AddressWidth - 1:0] address0;
+input ce0;
+output[DataWidth - 1:0] q0;
+
+
+
+predict_ensemble_yd2_rom predict_ensemble_yd2_rom_U(
+    .clk( clk ),
+    .addr0( address0 ),
+    .ce0( ce0 ),
+    .q0( q0 ));
+
+endmodule
+

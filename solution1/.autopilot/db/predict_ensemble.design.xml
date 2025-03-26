@@ -13,55 +13,79 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>1.25</ClockUncertainty>
-<EstimatedClockPeriod>9.763</EstimatedClockPeriod>
+<EstimatedClockPeriod>9.578</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>605</Best-caseLatency>
-<Average-caseLatency>19357</Average-caseLatency>
-<Worst-caseLatency>38237</Worst-caseLatency>
-<PipelineInitiationInterval>606 ~ 38238</PipelineInitiationInterval>
+<Best-caseLatency>1160</Best-caseLatency>
+<Average-caseLatency>7176</Average-caseLatency>
+<Worst-caseLatency>13448</Worst-caseLatency>
+<PipelineInitiationInterval>1161 ~ 13449</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <Feature_Load>
 <Name>Feature_Load</Name>
-<TripCount>13</TripCount>
-<Latency>26</Latency>
-<IterationLatency>2</IterationLatency>
-<PipelineDepth>2</PipelineDepth>
+<TripCount>4</TripCount>
+<Latency>4</Latency>
+<IterationLatency>1</IterationLatency>
+<PipelineDepth>1</PipelineDepth>
 </Feature_Load>
 <Tree_Tranversal>
 <Name>Tree_Tranversal</Name>
 <TripCount>64</TripCount>
-<Latency>576 ~ 38208</Latency>
+<Latency>576 ~ 6720</Latency>
 <IterationLatency>
 <range>
 <min>9</min>
-<max>597</max>
+<max>105</max>
 </range>
 </IterationLatency>
-<PipelineDepth>9 ~ 597</PipelineDepth>
+<PipelineDepth>9 ~ 105</PipelineDepth>
 <LOOP_TREE_DEPTH>
 <Name>LOOP_TREE_DEPTH</Name>
 <TripCount>
 <range>
 <min>1</min>
-<max>196</max>
+<max>32</max>
 </range>
 </TripCount>
-<Latency>5 ~ 590</Latency>
+<Latency>5 ~ 98</Latency>
 <PipelineII>3</PipelineII>
 <PipelineDepth>4</PipelineDepth>
 </LOOP_TREE_DEPTH>
 </Tree_Tranversal>
+<Tree_Tranversal2>
+<Name>Tree_Tranversal2</Name>
+<TripCount>64</TripCount>
+<Latency>576 ~ 6720</Latency>
+<IterationLatency>
+<range>
+<min>9</min>
+<max>105</max>
+</range>
+</IterationLatency>
+<PipelineDepth>9 ~ 105</PipelineDepth>
+<LOOP_TREE_DEPTH2>
+<Name>LOOP_TREE_DEPTH2</Name>
+<TripCount>
+<range>
+<min>1</min>
+<max>32</max>
+</range>
+</TripCount>
+<Latency>5 ~ 98</Latency>
+<PipelineII>3</PipelineII>
+<PipelineDepth>4</PipelineDepth>
+</LOOP_TREE_DEPTH2>
+</Tree_Tranversal2>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>56</BRAM_18K>
+<BRAM_18K>32</BRAM_18K>
 <DSP48E>2</DSP48E>
-<FF>1158</FF>
-<LUT>1160</LUT>
+<FF>1087</FF>
+<LUT>1215</LUT>
 <URAM>0</URAM>
 </Resources>
 </AreaEstimates>
@@ -357,8 +381,8 @@
 <CType>float</CType>
 </RtlPorts>
 <RtlPorts>
-<name>prediction_stream_V_TDATA</name>
-<Object>prediction_stream_V</Object>
+<name>prediction_sbp_V_TDATA</name>
+<Object>prediction_sbp_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -369,8 +393,8 @@
 <CType>float</CType>
 </RtlPorts>
 <RtlPorts>
-<name>prediction_stream_V_TVALID</name>
-<Object>prediction_stream_V</Object>
+<name>prediction_sbp_V_TVALID</name>
+<Object>prediction_sbp_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -381,8 +405,44 @@
 <CType>float</CType>
 </RtlPorts>
 <RtlPorts>
-<name>prediction_stream_V_TREADY</name>
-<Object>prediction_stream_V</Object>
+<name>prediction_sbp_V_TREADY</name>
+<Object>prediction_sbp_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+<CType>float</CType>
+</RtlPorts>
+<RtlPorts>
+<name>prediction_dbp_V_TDATA</name>
+<Object>prediction_dbp_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+<CType>float</CType>
+</RtlPorts>
+<RtlPorts>
+<name>prediction_dbp_V_TVALID</name>
+<Object>prediction_dbp_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+<CType>float</CType>
+</RtlPorts>
+<RtlPorts>
+<name>prediction_dbp_V_TREADY</name>
+<Object>prediction_dbp_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>

@@ -53,8 +53,8 @@ set Library     "hls"
 set IPName      "predict_ensemble"
 set Version     "1.0"
 set DisplayName "Predict_ensemble"
-set Revision    "2113992325"
-set Description "float_predict_ensemble"
+set Revision    "2114012772"
+set Description "predict_sbp&dbp"
 set Device      "zynq"
 set AutoFamily  ""
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -69,10 +69,13 @@ set sdaccel_dir [file join [pwd] .. sdaccel]
 set solution_dir "E:/SEU/Graduation_Prj/BoostingTree/solution1"
 set debug_dir [file join $solution_dir .debug]
 set xo_hls_files_dir ""
-set hdl_module_list {predict_ensemble_vdy
-predict_ensemble_wdI
-predict_ensemble_xdS
-predict_ensemble_yd2
+set hdl_module_list {predict_ensemble_PgM
+predict_ensemble_QgW
+predict_ensemble_Rg6
+predict_ensemble_Shg
+predict_ensemble_Thq
+predict_ensemble_UhA
+predict_ensemble_VhK
 predict_ensemble_bkb
 predict_ensemble_cud
 predict_ensemble_dEe
@@ -93,6 +96,26 @@ predict_ensemble_rcU
 predict_ensemble_sc4
 predict_ensemble_tde
 predict_ensemble_udo
+predict_ensemble_vdy
+predict_ensemble_wdI
+predict_ensemble_xdS
+predict_ensemble_yd2
+predict_ensemble_zec
+predict_ensemble_Aem
+predict_ensemble_Bew
+predict_ensemble_CeG
+predict_ensemble_DeQ
+predict_ensemble_Ee0
+predict_ensemble_Ffa
+predict_ensemble_Gfk
+predict_ensemble_Hfu
+predict_ensemble_IfE
+predict_ensemble_JfO
+predict_ensemble_KfY
+predict_ensemble_Lf8
+predict_ensemble_Mgi
+predict_ensemble_Ngs
+predict_ensemble_OgC
 predict_ensemble_CTRL_BUS_s_axi
 predict_ensemble
 }
@@ -217,7 +240,7 @@ set Interfaces {
                 Bits "1"
             }
         }
-        buses "s_axi_CTRL_BUS feature_stream_V prediction_stream_V"
+        buses "s_axi_CTRL_BUS feature_stream_V prediction_sbp_V prediction_dbp_V"
         reset "ap_rst_n"
     }
     ap_rst_n {
@@ -267,10 +290,36 @@ set Interfaces {
             }
         }
     }
-    prediction_stream_V {
+    prediction_sbp_V {
         type "axi4stream"
         mode "master"
-        port_prefix "prediction_stream_V"
+        port_prefix "prediction_sbp_V"
+        has_tready "1"
+        ports {
+            TDATA 32
+        }
+        ctype {
+            TDATA {
+                Type "real float"
+                Width "32"
+                Bits "32"
+            }
+            TVALID {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+            TREADY {
+                Type "bool"
+                Width "1"
+                Bits "1"
+            }
+        }
+    }
+    prediction_dbp_V {
+        type "axi4stream"
+        mode "master"
+        port_prefix "prediction_dbp_V"
         has_tready "1"
         ports {
             TDATA 32
@@ -1761,7 +1810,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 10 machine 64 combinational 0 latency 605 II x}
+set user_parameters_list {clk_period 10 machine 64 combinational 0 latency 1160 II x}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]

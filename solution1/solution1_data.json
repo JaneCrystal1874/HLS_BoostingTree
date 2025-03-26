@@ -13,7 +13,7 @@
     "Speed": "-2"
   },
   "HlsSolution": {"Config": [
-      "config_export -description=float_predict_ensemble",
+      "config_export -description=predict_sbp&dbp",
       "config_export -format=ip_catalog",
       "config_export -rtl=verilog"
     ]},
@@ -27,12 +27,21 @@
         "portRef": "TDATA"
       }
     },
-    "prediction_stream": {
+    "prediction_sbp": {
       "index": "1",
       "type": {
         "dataType": "float",
         "dataWidth": "32",
-        "interfaceRef": "prediction_stream_V",
+        "interfaceRef": "prediction_sbp_V",
+        "portRef": "TDATA"
+      }
+    },
+    "prediction_dbp": {
+      "index": "2",
+      "type": {
+        "dataType": "float",
+        "dataWidth": "32",
+        "interfaceRef": "prediction_dbp_V",
         "portRef": "TDATA"
       }
     }
@@ -45,7 +54,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "605",
+    "Latency": "1160",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -56,86 +65,152 @@
     "Version": "1.0",
     "DisplayName": "Predict_ensemble",
     "Revision": "",
-    "Description": "float_predict_ensemble",
+    "Description": "predict_sbp&dbp",
     "Taxonomy": "\/VIVADO_HLS_IP",
     "AutoFamilySupport": ""
   },
   "Files": {
     "CSource": ["..\/BoostingTree.cpp"],
     "Vhdl": [
+      "impl\/vhdl\/predict_ensemble_Aem.vhd",
+      "impl\/vhdl\/predict_ensemble_Bew.vhd",
       "impl\/vhdl\/predict_ensemble_bkb.vhd",
+      "impl\/vhdl\/predict_ensemble_CeG.vhd",
       "impl\/vhdl\/predict_ensemble_CTRL_BUS_s_axi.vhd",
       "impl\/vhdl\/predict_ensemble_cud.vhd",
       "impl\/vhdl\/predict_ensemble_dEe.vhd",
+      "impl\/vhdl\/predict_ensemble_DeQ.vhd",
+      "impl\/vhdl\/predict_ensemble_Ee0.vhd",
       "impl\/vhdl\/predict_ensemble_eOg.vhd",
+      "impl\/vhdl\/predict_ensemble_Ffa.vhd",
       "impl\/vhdl\/predict_ensemble_fYi.vhd",
       "impl\/vhdl\/predict_ensemble_g8j.vhd",
+      "impl\/vhdl\/predict_ensemble_Gfk.vhd",
       "impl\/vhdl\/predict_ensemble_hbi.vhd",
+      "impl\/vhdl\/predict_ensemble_Hfu.vhd",
       "impl\/vhdl\/predict_ensemble_ibs.vhd",
+      "impl\/vhdl\/predict_ensemble_IfE.vhd",
       "impl\/vhdl\/predict_ensemble_jbC.vhd",
+      "impl\/vhdl\/predict_ensemble_JfO.vhd",
       "impl\/vhdl\/predict_ensemble_kbM.vhd",
+      "impl\/vhdl\/predict_ensemble_KfY.vhd",
       "impl\/vhdl\/predict_ensemble_lbW.vhd",
+      "impl\/vhdl\/predict_ensemble_Lf8.vhd",
       "impl\/vhdl\/predict_ensemble_mb6.vhd",
+      "impl\/vhdl\/predict_ensemble_Mgi.vhd",
       "impl\/vhdl\/predict_ensemble_ncg.vhd",
+      "impl\/vhdl\/predict_ensemble_Ngs.vhd",
       "impl\/vhdl\/predict_ensemble_ocq.vhd",
+      "impl\/vhdl\/predict_ensemble_OgC.vhd",
       "impl\/vhdl\/predict_ensemble_pcA.vhd",
+      "impl\/vhdl\/predict_ensemble_PgM.vhd",
       "impl\/vhdl\/predict_ensemble_qcK.vhd",
+      "impl\/vhdl\/predict_ensemble_QgW.vhd",
       "impl\/vhdl\/predict_ensemble_rcU.vhd",
+      "impl\/vhdl\/predict_ensemble_Rg6.vhd",
       "impl\/vhdl\/predict_ensemble_sc4.vhd",
+      "impl\/vhdl\/predict_ensemble_Shg.vhd",
       "impl\/vhdl\/predict_ensemble_tde.vhd",
+      "impl\/vhdl\/predict_ensemble_Thq.vhd",
       "impl\/vhdl\/predict_ensemble_udo.vhd",
+      "impl\/vhdl\/predict_ensemble_UhA.vhd",
       "impl\/vhdl\/predict_ensemble_vdy.vhd",
+      "impl\/vhdl\/predict_ensemble_VhK.vhd",
       "impl\/vhdl\/predict_ensemble_wdI.vhd",
       "impl\/vhdl\/predict_ensemble_xdS.vhd",
       "impl\/vhdl\/predict_ensemble_yd2.vhd",
+      "impl\/vhdl\/predict_ensemble_zec.vhd",
       "impl\/vhdl\/predict_ensemble.vhd"
     ],
     "Verilog": [
+      "impl\/verilog\/predict_ensemble_Aem.v",
+      "impl\/verilog\/predict_ensemble_Aem_rom.dat",
+      "impl\/verilog\/predict_ensemble_Bew.v",
+      "impl\/verilog\/predict_ensemble_Bew_rom.dat",
       "impl\/verilog\/predict_ensemble_bkb.v",
       "impl\/verilog\/predict_ensemble_bkb_rom.dat",
+      "impl\/verilog\/predict_ensemble_CeG.v",
+      "impl\/verilog\/predict_ensemble_CeG_rom.dat",
       "impl\/verilog\/predict_ensemble_CTRL_BUS_s_axi.v",
       "impl\/verilog\/predict_ensemble_cud.v",
       "impl\/verilog\/predict_ensemble_cud_rom.dat",
       "impl\/verilog\/predict_ensemble_dEe.v",
       "impl\/verilog\/predict_ensemble_dEe_rom.dat",
+      "impl\/verilog\/predict_ensemble_DeQ.v",
+      "impl\/verilog\/predict_ensemble_DeQ_rom.dat",
+      "impl\/verilog\/predict_ensemble_Ee0.v",
+      "impl\/verilog\/predict_ensemble_Ee0_rom.dat",
       "impl\/verilog\/predict_ensemble_eOg.v",
       "impl\/verilog\/predict_ensemble_eOg_rom.dat",
+      "impl\/verilog\/predict_ensemble_Ffa.v",
+      "impl\/verilog\/predict_ensemble_Ffa_rom.dat",
       "impl\/verilog\/predict_ensemble_fYi.v",
       "impl\/verilog\/predict_ensemble_fYi_rom.dat",
       "impl\/verilog\/predict_ensemble_g8j.v",
       "impl\/verilog\/predict_ensemble_g8j_rom.dat",
+      "impl\/verilog\/predict_ensemble_Gfk.v",
+      "impl\/verilog\/predict_ensemble_Gfk_rom.dat",
       "impl\/verilog\/predict_ensemble_hbi.v",
       "impl\/verilog\/predict_ensemble_hbi_rom.dat",
+      "impl\/verilog\/predict_ensemble_Hfu.v",
+      "impl\/verilog\/predict_ensemble_Hfu_rom.dat",
       "impl\/verilog\/predict_ensemble_ibs.v",
       "impl\/verilog\/predict_ensemble_ibs_rom.dat",
+      "impl\/verilog\/predict_ensemble_IfE.v",
+      "impl\/verilog\/predict_ensemble_IfE_rom.dat",
       "impl\/verilog\/predict_ensemble_jbC.v",
       "impl\/verilog\/predict_ensemble_jbC_rom.dat",
+      "impl\/verilog\/predict_ensemble_JfO.v",
+      "impl\/verilog\/predict_ensemble_JfO_rom.dat",
       "impl\/verilog\/predict_ensemble_kbM.v",
       "impl\/verilog\/predict_ensemble_kbM_rom.dat",
+      "impl\/verilog\/predict_ensemble_KfY.v",
+      "impl\/verilog\/predict_ensemble_KfY_rom.dat",
       "impl\/verilog\/predict_ensemble_lbW.v",
       "impl\/verilog\/predict_ensemble_lbW_rom.dat",
+      "impl\/verilog\/predict_ensemble_Lf8.v",
+      "impl\/verilog\/predict_ensemble_Lf8_rom.dat",
       "impl\/verilog\/predict_ensemble_mb6.v",
       "impl\/verilog\/predict_ensemble_mb6_rom.dat",
+      "impl\/verilog\/predict_ensemble_Mgi.v",
+      "impl\/verilog\/predict_ensemble_Mgi_rom.dat",
       "impl\/verilog\/predict_ensemble_ncg.v",
       "impl\/verilog\/predict_ensemble_ncg_rom.dat",
+      "impl\/verilog\/predict_ensemble_Ngs.v",
+      "impl\/verilog\/predict_ensemble_Ngs_rom.dat",
       "impl\/verilog\/predict_ensemble_ocq.v",
       "impl\/verilog\/predict_ensemble_ocq_rom.dat",
+      "impl\/verilog\/predict_ensemble_OgC.v",
+      "impl\/verilog\/predict_ensemble_OgC_rom.dat",
       "impl\/verilog\/predict_ensemble_pcA.v",
       "impl\/verilog\/predict_ensemble_pcA_rom.dat",
+      "impl\/verilog\/predict_ensemble_PgM.v",
       "impl\/verilog\/predict_ensemble_qcK.v",
       "impl\/verilog\/predict_ensemble_qcK_rom.dat",
+      "impl\/verilog\/predict_ensemble_QgW.v",
       "impl\/verilog\/predict_ensemble_rcU.v",
       "impl\/verilog\/predict_ensemble_rcU_rom.dat",
+      "impl\/verilog\/predict_ensemble_Rg6.v",
       "impl\/verilog\/predict_ensemble_sc4.v",
       "impl\/verilog\/predict_ensemble_sc4_rom.dat",
+      "impl\/verilog\/predict_ensemble_Shg.v",
       "impl\/verilog\/predict_ensemble_tde.v",
       "impl\/verilog\/predict_ensemble_tde_rom.dat",
+      "impl\/verilog\/predict_ensemble_Thq.v",
       "impl\/verilog\/predict_ensemble_udo.v",
       "impl\/verilog\/predict_ensemble_udo_rom.dat",
+      "impl\/verilog\/predict_ensemble_UhA.v",
       "impl\/verilog\/predict_ensemble_vdy.v",
+      "impl\/verilog\/predict_ensemble_vdy_rom.dat",
+      "impl\/verilog\/predict_ensemble_VhK.v",
       "impl\/verilog\/predict_ensemble_wdI.v",
+      "impl\/verilog\/predict_ensemble_wdI_rom.dat",
       "impl\/verilog\/predict_ensemble_xdS.v",
+      "impl\/verilog\/predict_ensemble_xdS_rom.dat",
       "impl\/verilog\/predict_ensemble_yd2.v",
+      "impl\/verilog\/predict_ensemble_yd2_rom.dat",
+      "impl\/verilog\/predict_ensemble_zec.v",
+      "impl\/verilog\/predict_ensemble_zec_rom.dat",
       "impl\/verilog\/predict_ensemble.v"
     ],
     "SwDriver": [
@@ -179,7 +254,7 @@
       "ctype": {"CLK": {"Type": "bool"}},
       "bundle_name": "ap_clk",
       "bundle_role": "default",
-      "buses": "s_axi_CTRL_BUS feature_stream_V prediction_stream_V",
+      "buses": "s_axi_CTRL_BUS feature_stream_V prediction_sbp_V prediction_dbp_V",
       "reset": "ap_rst_n"
     },
     "ap_rst_n": {
@@ -210,10 +285,25 @@
       "bundle_name": "CTRL_BUS",
       "bundle_role": "interrupt"
     },
-    "prediction_stream_V": {
+    "prediction_dbp_V": {
       "type": "axi4stream",
       "mode": "master",
-      "port_prefix": "prediction_stream_V",
+      "port_prefix": "prediction_dbp_V",
+      "has_tready": "1",
+      "ctype": {
+        "TDATA": {
+          "Type": "real float",
+          "Width": "32"
+        },
+        "TVALID": {"Type": "bool"},
+        "TREADY": {"Type": "bool"}
+      },
+      "port_width": {"TDATA": "32"}
+    },
+    "prediction_sbp_V": {
+      "type": "axi4stream",
+      "mode": "master",
+      "port_prefix": "prediction_sbp_V",
       "has_tready": "1",
       "ctype": {
         "TDATA": {
@@ -534,15 +624,27 @@
       "dir": "out",
       "width": "1"
     },
-    "prediction_stream_V_TDATA": {
+    "prediction_sbp_V_TDATA": {
       "dir": "out",
       "width": "32"
     },
-    "prediction_stream_V_TVALID": {
+    "prediction_sbp_V_TVALID": {
       "dir": "out",
       "width": "1"
     },
-    "prediction_stream_V_TREADY": {
+    "prediction_sbp_V_TREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "prediction_dbp_V_TDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "prediction_dbp_V_TVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "prediction_dbp_V_TREADY": {
       "dir": "in",
       "width": "1"
     }
@@ -558,54 +660,74 @@
       }},
     "Metrics": {"predict_ensemble": {
         "Latency": {
-          "LatencyBest": "605",
-          "LatencyAvg": "19357",
-          "LatencyWorst": "38237",
-          "PipelineIIMin": "606",
-          "PipelineIIMax": "38238",
-          "PipelineII": "606 ~ 38238",
+          "LatencyBest": "1160",
+          "LatencyAvg": "7176",
+          "LatencyWorst": "13448",
+          "PipelineIIMin": "1161",
+          "PipelineIIMax": "13449",
+          "PipelineII": "1161 ~ 13449",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "9.763"
+          "Estimate": "9.578"
         },
         "Loops": [
           {
             "Name": "Feature_Load",
-            "TripCount": "13",
-            "Latency": "26",
+            "TripCount": "4",
+            "Latency": "4",
             "PipelineII": "",
-            "PipelineDepth": "2"
+            "PipelineDepth": "1"
           },
           {
             "Name": "Tree_Tranversal",
             "TripCount": "64",
             "LatencyMin": "576",
-            "LatencyMax": "38208",
-            "Latency": "576 ~ 38208",
+            "LatencyMax": "6720",
+            "Latency": "576 ~ 6720",
             "PipelineII": "",
             "PipelineDepthMin": "9",
-            "PipelineDepthMax": "597",
-            "PipelineDepth": "9 ~ 597",
+            "PipelineDepthMax": "105",
+            "PipelineDepth": "9 ~ 105",
             "Loops": [{
                 "Name": "LOOP_TREE_DEPTH",
                 "TripCount": "",
                 "LatencyMin": "5",
-                "LatencyMax": "590",
-                "Latency": "5 ~ 590",
+                "LatencyMax": "98",
+                "Latency": "5 ~ 98",
+                "PipelineII": "3",
+                "PipelineDepth": "4"
+              }]
+          },
+          {
+            "Name": "Tree_Tranversal2",
+            "TripCount": "64",
+            "LatencyMin": "576",
+            "LatencyMax": "6720",
+            "Latency": "576 ~ 6720",
+            "PipelineII": "",
+            "PipelineDepthMin": "9",
+            "PipelineDepthMax": "105",
+            "PipelineDepth": "9 ~ 105",
+            "Loops": [{
+                "Name": "LOOP_TREE_DEPTH2",
+                "TripCount": "",
+                "LatencyMin": "5",
+                "LatencyMax": "98",
+                "Latency": "5 ~ 98",
                 "PipelineII": "3",
                 "PipelineDepth": "4"
               }]
           }
         ],
         "Area": {
-          "BRAM_18K": "56",
+          "BRAM_18K": "32",
           "DSP48E": "2",
-          "FF": "1158",
-          "LUT": "1160",
+          "FF": "1087",
+          "LUT": "1215",
           "URAM": "0"
         }
       }}
@@ -620,7 +742,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2025-03-12 15:25:28 +0800",
+    "Time": "2025-03-26 20:12:29 +0800",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.1"
   }

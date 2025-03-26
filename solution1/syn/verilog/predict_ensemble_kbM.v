@@ -7,8 +7,8 @@ module predict_ensemble_kbM_rom (
 addr0, ce0, q0, clk);
 
 parameter DWIDTH = 32;
-parameter AWIDTH = 12;
-parameter MEM_SIZE = 3136;
+parameter AWIDTH = 9;
+parameter MEM_SIZE = 512;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -44,8 +44,8 @@ module predict_ensemble_kbM(
     q0);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd3136;
-parameter AddressWidth = 32'd12;
+parameter AddressRange = 32'd512;
+parameter AddressWidth = 32'd9;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

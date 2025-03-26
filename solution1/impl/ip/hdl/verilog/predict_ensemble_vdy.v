@@ -2,74 +2,63 @@
 // Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
+`timescale 1 ns / 1 ps
+(* rom_style = "distributed" *) module predict_ensemble_vdy_rom (
+addr0, ce0, q0, clk);
 
-`timescale 1ns/1ps
+parameter DWIDTH = 1;
+parameter AWIDTH = 9;
+parameter MEM_SIZE = 512;
 
-module predict_ensemble_vdy
-#(parameter
-    ID         = 1,
-    NUM_STAGE  = 4,
-    din0_WIDTH = 32,
-    din1_WIDTH = 32,
-    dout_WIDTH = 32
-)(
-    input  wire                  clk,
-    input  wire                  reset,
-    input  wire                  ce,
-    input  wire [din0_WIDTH-1:0] din0,
-    input  wire [din1_WIDTH-1:0] din1,
-    output wire [dout_WIDTH-1:0] dout
-);
-//------------------------Local signal-------------------
-wire                  aclk;
-wire                  aclken;
-wire                  a_tvalid;
-wire [31:0]           a_tdata;
-wire                  b_tvalid;
-wire [31:0]           b_tdata;
-wire                  r_tvalid;
-wire [31:0]           r_tdata;
-reg  [din0_WIDTH-1:0] din0_buf1;
-reg  [din1_WIDTH-1:0] din1_buf1;
-reg                   ce_r;
-wire [dout_WIDTH-1:0] dout_i;
-reg  [dout_WIDTH-1:0] dout_r;
-//------------------------Instantiation------------------
-predict_ensemble_ap_fadd_2_full_dsp_32 predict_ensemble_ap_fadd_2_full_dsp_32_u (
-    .aclk                 ( aclk ),
-    .aclken               ( aclken ),
-    .s_axis_a_tvalid      ( a_tvalid ),
-    .s_axis_a_tdata       ( a_tdata ),
-    .s_axis_b_tvalid      ( b_tvalid ),
-    .s_axis_b_tdata       ( b_tdata ),
-    .m_axis_result_tvalid ( r_tvalid ),
-    .m_axis_result_tdata  ( r_tdata )
-);
-//------------------------Body---------------------------
-assign aclk     = clk;
-assign aclken   = ce_r;
-assign a_tvalid = 1'b1;
-assign a_tdata  = din0_buf1;
-assign b_tvalid = 1'b1;
-assign b_tdata  = din1_buf1;
-assign dout_i   = r_tdata;
+input[AWIDTH-1:0] addr0;
+input ce0;
+output reg[DWIDTH-1:0] q0;
+input clk;
 
-always @(posedge clk) begin
-    if (ce) begin
-        din0_buf1 <= din0;
-        din1_buf1 <= din1;
+(* ram_style = "distributed" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
+
+initial begin
+    $readmemh("./predict_ensemble_vdy_rom.dat", ram);
+end
+
+
+
+always @(posedge clk)  
+begin 
+    if (ce0) 
+    begin
+        q0 <= ram[addr0];
     end
 end
 
-always @ (posedge clk) begin
-    ce_r <= ce;
-end
 
-always @ (posedge clk) begin
-    if (ce_r) begin
-        dout_r <= dout_i;
-    end
-end
 
-assign dout = ce_r?dout_i:dout_r;
 endmodule
+
+`timescale 1 ns / 1 ps
+module predict_ensemble_vdy(
+    reset,
+    clk,
+    address0,
+    ce0,
+    q0);
+
+parameter DataWidth = 32'd1;
+parameter AddressRange = 32'd512;
+parameter AddressWidth = 32'd9;
+input reset;
+input clk;
+input[AddressWidth - 1:0] address0;
+input ce0;
+output[DataWidth - 1:0] q0;
+
+
+
+predict_ensemble_vdy_rom predict_ensemble_vdy_rom_U(
+    .clk( clk ),
+    .addr0( address0 ),
+    .ce0( ce0 ),
+    .q0( q0 ));
+
+endmodule
+
