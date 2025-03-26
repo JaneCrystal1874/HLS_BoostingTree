@@ -5,8 +5,9 @@
 #include <cmath>
 #include <iostream>
 #define FEATURE_SIZE 4
-#define N_TREES 64    // 假设决策树数量
+#define N_TREES 64    //  假设决策树数量
 #define MAX_NODE 32    // 假设最大节点深度
+
 
 void predict_ensemble(hls::stream<float>& feature_stream,
 		hls::stream<float>& prediction_sbp,
